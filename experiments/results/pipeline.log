@@ -1,0 +1,670 @@
+2026-02-28 20:31:34,261 [INFO] Running pipeline on 128 datasets, 2 models, 1 seeds (256 total runs)
+2026-02-28 20:31:34,261 [INFO] --- [1/256] ACSF1 | hydra | seed=42 ---
+2026-02-28 20:31:36,905 [INFO] [ACSF1][hydra][seed=42] acc=0.8800 f1=0.8803 time=2.60s mem=+581.7MB
+2026-02-28 20:31:36,905 [INFO] --- [2/256] ACSF1 | mrsqm | seed=42 ---
+2026-02-28 20:31:48,897 [INFO] [ACSF1][mrsqm][seed=42] acc=0.9300 f1=0.9285 time=11.95s mem=-371.5MB
+2026-02-28 20:31:48,897 [INFO] --- [3/256] Adiac | hydra | seed=42 ---
+2026-02-28 20:31:50,300 [INFO] [Adiac][hydra][seed=42] acc=0.8133 f1=0.7946 time=1.38s mem=+576.9MB
+2026-02-28 20:31:50,301 [INFO] --- [4/256] Adiac | mrsqm | seed=42 ---
+2026-02-28 20:31:55,624 [INFO] [Adiac][mrsqm][seed=42] acc=0.8184 f1=0.8088 time=5.30s mem=-311.0MB
+2026-02-28 20:31:55,625 [INFO] --- [5/256] AllGestureWiimoteX | hydra | seed=42 ---
+2026-02-28 20:32:00,701 [INFO] [AllGestureWiimoteX][hydra][seed=42] acc=0.6929 f1=0.6960 time=4.95s mem=+1453.1MB
+2026-02-28 20:32:00,702 [INFO] --- [6/256] AllGestureWiimoteX | mrsqm | seed=42 ---
+2026-02-28 20:32:16,846 [INFO] [AllGestureWiimoteX][mrsqm][seed=42] acc=0.6300 f1=0.6215 time=16.02s mem=-1584.8MB
+2026-02-28 20:32:16,848 [INFO] --- [7/256] AllGestureWiimoteY | hydra | seed=42 ---
+2026-02-28 20:32:21,887 [INFO] [AllGestureWiimoteY][hydra][seed=42] acc=0.7157 f1=0.7136 time=4.91s mem=+1478.9MB
+2026-02-28 20:32:21,887 [INFO] --- [8/256] AllGestureWiimoteY | mrsqm | seed=42 ---
+2026-02-28 20:32:37,769 [INFO] [AllGestureWiimoteY][mrsqm][seed=42] acc=0.6500 f1=0.6446 time=15.76s mem=-437.4MB
+2026-02-28 20:32:37,771 [INFO] --- [9/256] AllGestureWiimoteZ | hydra | seed=42 ---
+2026-02-28 20:32:42,727 [INFO] [AllGestureWiimoteZ][hydra][seed=42] acc=0.6786 f1=0.6742 time=4.83s mem=+471.3MB
+2026-02-28 20:32:42,728 [INFO] --- [10/256] AllGestureWiimoteZ | mrsqm | seed=42 ---
+2026-02-28 20:32:58,540 [INFO] [AllGestureWiimoteZ][mrsqm][seed=42] acc=0.6414 f1=0.6337 time=15.68s mem=-535.8MB
+2026-02-28 20:32:58,541 [INFO] --- [11/256] ArrowHead | hydra | seed=42 ---
+2026-02-28 20:32:59,040 [INFO] [ArrowHead][hydra][seed=42] acc=0.8114 f1=0.8120 time=0.49s mem=+99.3MB
+2026-02-28 20:32:59,041 [INFO] --- [12/256] ArrowHead | mrsqm | seed=42 ---
+2026-02-28 20:33:00,892 [INFO] [ArrowHead][mrsqm][seed=42] acc=0.8114 f1=0.8134 time=1.84s mem=-612.6MB
+2026-02-28 20:33:00,892 [INFO] --- [13/256] Beef | hydra | seed=42 ---
+2026-02-28 20:33:01,214 [INFO] [Beef][hydra][seed=42] acc=0.8333 f1=0.8352 time=0.31s mem=+29.8MB
+2026-02-28 20:33:01,214 [INFO] --- [14/256] Beef | mrsqm | seed=42 ---
+2026-02-28 20:33:02,540 [INFO] [Beef][mrsqm][seed=42] acc=0.7667 f1=0.7733 time=1.32s mem=+28.2MB
+2026-02-28 20:33:02,541 [INFO] --- [15/256] BeetleFly | hydra | seed=42 ---
+2026-02-28 20:33:02,800 [INFO] [BeetleFly][hydra][seed=42] acc=0.9000 f1=0.8990 time=0.25s mem=+11.4MB
+2026-02-28 20:33:02,801 [INFO] --- [16/256] BeetleFly | mrsqm | seed=42 ---
+2026-02-28 20:33:03,931 [INFO] [BeetleFly][mrsqm][seed=42] acc=0.9500 f1=0.9499 time=1.12s mem=+23.5MB
+2026-02-28 20:33:03,931 [INFO] --- [17/256] BirdChicken | hydra | seed=42 ---
+2026-02-28 20:33:04,194 [INFO] [BirdChicken][hydra][seed=42] acc=0.9000 f1=0.8990 time=0.25s mem=+0.0MB
+2026-02-28 20:33:04,195 [INFO] --- [18/256] BirdChicken | mrsqm | seed=42 ---
+2026-02-28 20:33:05,304 [INFO] [BirdChicken][mrsqm][seed=42] acc=0.9000 f1=0.8990 time=1.10s mem=+20.8MB
+2026-02-28 20:33:05,305 [INFO] --- [19/256] BME | hydra | seed=42 ---
+2026-02-28 20:33:05,530 [INFO] [BME][hydra][seed=42] acc=1.0000 f1=1.0000 time=0.22s mem=+43.3MB
+2026-02-28 20:33:05,530 [INFO] --- [20/256] BME | mrsqm | seed=42 ---
+2026-02-28 20:33:06,466 [INFO] [BME][mrsqm][seed=42] acc=0.8200 f1=0.8238 time=0.93s mem=+14.8MB
+2026-02-28 20:33:06,466 [INFO] --- [21/256] Car | hydra | seed=42 ---
+2026-02-28 20:33:07,171 [INFO] [Car][hydra][seed=42] acc=0.9333 f1=0.9333 time=0.69s mem=+88.6MB
+2026-02-28 20:33:07,171 [INFO] --- [22/256] Car | mrsqm | seed=42 ---
+2026-02-28 20:33:09,930 [INFO] [Car][mrsqm][seed=42] acc=0.8333 f1=0.8366 time=2.75s mem=+25.7MB
+2026-02-28 20:33:09,931 [INFO] --- [23/256] CBF | hydra | seed=42 ---
+2026-02-28 20:33:11,091 [INFO] [CBF][hydra][seed=42] acc=0.9911 f1=0.9911 time=1.14s mem=+443.4MB
+2026-02-28 20:33:11,091 [INFO] --- [24/256] CBF | mrsqm | seed=42 ---
+2026-02-28 20:33:14,491 [INFO] [CBF][mrsqm][seed=42] acc=1.0000 f1=1.0000 time=3.38s mem=+37.7MB
+2026-02-28 20:33:14,491 [INFO] --- [25/256] Chinatown | hydra | seed=42 ---
+2026-02-28 20:33:14,590 [INFO] [Chinatown][hydra][seed=42] acc=0.9825 f1=0.9784 time=0.09s mem=+0.6MB
+2026-02-28 20:33:14,590 [INFO] --- [26/256] Chinatown | mrsqm | seed=42 ---
+2026-02-28 20:33:14,979 [INFO] [Chinatown][mrsqm][seed=42] acc=0.9621 f1=0.9531 time=0.38s mem=+5.0MB
+2026-02-28 20:33:14,980 [INFO] --- [27/256] ChlorineConcentration | hydra | seed=42 ---
+2026-02-28 20:33:23,189 [INFO] [ChlorineConcentration][hydra][seed=42] acc=0.7747 f1=0.7335 time=8.10s mem=+2527.7MB
+2026-02-28 20:33:23,190 [INFO] --- [28/256] ChlorineConcentration | mrsqm | seed=42 ---
+2026-02-28 20:33:43,602 [INFO] [ChlorineConcentration][mrsqm][seed=42] acc=0.7125 f1=0.6639 time=20.29s mem=-1186.6MB
+2026-02-28 20:33:43,604 [INFO] --- [29/256] CinCECGTorso | hydra | seed=42 ---
+2026-02-28 20:34:09,776 [INFO] [CinCECGTorso][hydra][seed=42] acc=0.9949 f1=0.9949 time=25.85s mem=+4981.2MB
+2026-02-28 20:34:09,779 [INFO] --- [30/256] CinCECGTorso | mrsqm | seed=42 ---
+2026-02-28 20:35:29,548 [INFO] [CinCECGTorso][mrsqm][seed=42] acc=0.9326 f1=0.9330 time=79.43s mem=-6198.0MB
+2026-02-28 20:35:29,549 [INFO] --- [31/256] Coffee | hydra | seed=42 ---
+2026-02-28 20:35:30,496 [INFO] [Coffee][hydra][seed=42] acc=1.0000 f1=1.0000 time=0.20s mem=+34.1MB
+2026-02-28 20:35:30,497 [INFO] --- [32/256] Coffee | mrsqm | seed=42 ---
+2026-02-28 20:35:31,355 [INFO] [Coffee][mrsqm][seed=42] acc=0.9643 f1=0.9639 time=0.85s mem=+31.9MB
+2026-02-28 20:35:31,356 [INFO] --- [33/256] Computers | hydra | seed=42 ---
+2026-02-28 20:35:35,022 [INFO] [Computers][hydra][seed=42] acc=0.7120 f1=0.7115 time=3.17s mem=+501.9MB
+2026-02-28 20:35:35,022 [INFO] --- [34/256] Computers | mrsqm | seed=42 ---
+2026-02-28 20:35:48,067 [INFO] [Computers][mrsqm][seed=42] acc=0.7640 f1=0.7640 time=12.99s mem=+95.6MB
+2026-02-28 20:35:48,068 [INFO] --- [35/256] CricketX | hydra | seed=42 ---
+2026-02-28 20:35:51,073 [INFO] [CricketX][hydra][seed=42] acc=0.8128 f1=0.8138 time=2.42s mem=+166.7MB
+2026-02-28 20:35:51,074 [INFO] --- [36/256] CricketX | mrsqm | seed=42 ---
+2026-02-28 20:35:59,060 [INFO] [CricketX][mrsqm][seed=42] acc=0.8026 f1=0.8037 time=7.95s mem=+77.7MB
+2026-02-28 20:35:59,061 [INFO] --- [37/256] CricketY | hydra | seed=42 ---
+2026-02-28 20:36:02,610 [INFO] [CricketY][hydra][seed=42] acc=0.8231 f1=0.8257 time=2.39s mem=+195.0MB
+2026-02-28 20:36:02,611 [INFO] --- [38/256] CricketY | mrsqm | seed=42 ---
+2026-02-28 20:36:10,627 [INFO] [CricketY][mrsqm][seed=42] acc=0.8256 f1=0.8255 time=7.98s mem=+36.6MB
+2026-02-28 20:36:10,627 [INFO] --- [39/256] CricketZ | hydra | seed=42 ---
+2026-02-28 20:36:13,362 [INFO] [CricketZ][hydra][seed=42] acc=0.8000 f1=0.7861 time=2.39s mem=+0.3MB
+2026-02-28 20:36:13,362 [INFO] --- [40/256] CricketZ | mrsqm | seed=42 ---
+2026-02-28 20:36:21,347 [INFO] [CricketZ][mrsqm][seed=42] acc=0.8231 f1=0.8141 time=7.95s mem=+36.8MB
+2026-02-28 20:36:21,347 [INFO] --- [41/256] Crop | hydra | seed=42 ---
+2026-02-28 20:36:42,133 [INFO] [Crop][hydra][seed=42] acc=0.7359 f1=0.7288 time=19.19s mem=+1818.2MB
+2026-02-28 20:36:42,136 [INFO] --- [42/256] Crop | mrsqm | seed=42 ---
+2026-02-28 20:37:17,466 [INFO] [Crop][mrsqm][seed=42] acc=0.7235 f1=0.7213 time=35.15s mem=-504.7MB
+2026-02-28 20:37:17,467 [INFO] --- [43/256] DiatomSizeReduction | hydra | seed=42 ---
+2026-02-28 20:37:18,974 [INFO] [DiatomSizeReduction][hydra][seed=42] acc=0.9477 f1=0.9337 time=1.23s mem=+88.7MB
+2026-02-28 20:37:18,975 [INFO] --- [44/256] DiatomSizeReduction | mrsqm | seed=42 ---
+2026-02-28 20:37:22,468 [INFO] [DiatomSizeReduction][mrsqm][seed=42] acc=0.8987 f1=0.7922 time=3.47s mem=-1965.8MB
+2026-02-28 20:37:22,468 [INFO] --- [45/256] DistalPhalanxOutlineAgeGroup | hydra | seed=42 ---
+2026-02-28 20:37:23,414 [INFO] [DistalPhalanxOutlineAgeGroup][hydra][seed=42] acc=0.7698 f1=0.7693 time=0.47s mem=+74.8MB
+2026-02-28 20:37:23,415 [INFO] --- [46/256] DistalPhalanxOutlineAgeGroup | mrsqm | seed=42 ---
+2026-02-28 20:37:25,013 [INFO] [DistalPhalanxOutlineAgeGroup][mrsqm][seed=42] acc=0.7266 f1=0.7218 time=1.59s mem=+74.0MB
+2026-02-28 20:37:25,014 [INFO] --- [47/256] DistalPhalanxOutlineCorrect | hydra | seed=42 ---
+2026-02-28 20:37:26,952 [INFO] [DistalPhalanxOutlineCorrect][hydra][seed=42] acc=0.7500 f1=0.7333 time=0.80s mem=+150.4MB
+2026-02-28 20:37:26,953 [INFO] --- [48/256] DistalPhalanxOutlineCorrect | mrsqm | seed=42 ---
+2026-02-28 20:37:29,244 [INFO] [DistalPhalanxOutlineCorrect][mrsqm][seed=42] acc=0.7754 f1=0.7634 time=2.28s mem=+80.2MB
+2026-02-28 20:37:29,244 [INFO] --- [49/256] DistalPhalanxTW | hydra | seed=42 ---
+2026-02-28 20:37:30,555 [INFO] [DistalPhalanxTW][hydra][seed=42] acc=0.7050 f1=0.4974 time=0.47s mem=+0.2MB
+2026-02-28 20:37:30,555 [INFO] --- [50/256] DistalPhalanxTW | mrsqm | seed=42 ---
+2026-02-28 20:37:32,159 [INFO] [DistalPhalanxTW][mrsqm][seed=42] acc=0.7050 f1=0.5823 time=1.59s mem=-1181.9MB
+2026-02-28 20:37:32,160 [INFO] --- [51/256] DodgerLoopDay | hydra | seed=42 ---
+2026-02-28 20:37:32,846 [INFO] [DodgerLoopDay][hydra][seed=42] acc=0.5714 f1=0.5691 time=0.47s mem=+70.2MB
+2026-02-28 20:37:32,847 [INFO] --- [52/256] DodgerLoopDay | mrsqm | seed=42 ---
+2026-02-28 20:37:34,522 [INFO] [DodgerLoopDay][mrsqm][seed=42] acc=0.5714 f1=0.5636 time=1.67s mem=+33.3MB
+2026-02-28 20:37:34,522 [INFO] --- [53/256] DodgerLoopGame | hydra | seed=42 ---
+2026-02-28 20:37:35,397 [INFO] [DodgerLoopGame][hydra][seed=42] acc=0.8110 f1=0.8090 time=0.44s mem=+6.8MB
+2026-02-28 20:37:35,398 [INFO] --- [54/256] DodgerLoopGame | mrsqm | seed=42 ---
+2026-02-28 20:37:36,939 [INFO] [DodgerLoopGame][mrsqm][seed=42] acc=0.8819 f1=0.8808 time=1.53s mem=+24.0MB
+2026-02-28 20:37:36,939 [INFO] --- [55/256] DodgerLoopWeekend | hydra | seed=42 ---
+2026-02-28 20:37:38,102 [INFO] [DodgerLoopWeekend][hydra][seed=42] acc=0.9762 f1=0.9706 time=0.42s mem=+3.2MB
+2026-02-28 20:37:38,103 [INFO] --- [56/256] DodgerLoopWeekend | mrsqm | seed=42 ---
+2026-02-28 20:37:39,617 [INFO] [DodgerLoopWeekend][mrsqm][seed=42] acc=0.9683 f1=0.9611 time=1.50s mem=+21.3MB
+2026-02-28 20:37:39,618 [INFO] --- [57/256] Earthquakes | hydra | seed=42 ---
+2026-02-28 20:37:42,545 [INFO] [Earthquakes][hydra][seed=42] acc=0.7410 f1=0.4256 time=2.41s mem=+546.9MB
+2026-02-28 20:37:42,546 [INFO] --- [58/256] Earthquakes | mrsqm | seed=42 ---
+2026-02-28 20:37:51,532 [INFO] [Earthquakes][mrsqm][seed=42] acc=0.7698 f1=0.5328 time=8.95s mem=+156.9MB
+2026-02-28 20:37:51,533 [INFO] --- [59/256] ECG200 | hydra | seed=42 ---
+2026-02-28 20:37:52,165 [INFO] [ECG200][hydra][seed=42] acc=0.8900 f1=0.8766 time=0.19s mem=+0.2MB
+2026-02-28 20:37:52,166 [INFO] --- [60/256] ECG200 | mrsqm | seed=42 ---
+2026-02-28 20:37:52,992 [INFO] [ECG200][mrsqm][seed=42] acc=0.8700 f1=0.8519 time=0.82s mem=+15.0MB
+2026-02-28 20:37:52,992 [INFO] --- [61/256] ECG5000 | hydra | seed=42 ---
+2026-02-28 20:38:01,778 [INFO] [ECG5000][hydra][seed=42] acc=0.9478 f1=0.5935 time=7.36s mem=+2195.9MB
+2026-02-28 20:38:01,779 [INFO] --- [62/256] ECG5000 | mrsqm | seed=42 ---
+2026-02-28 20:38:20,968 [INFO] [ECG5000][mrsqm][seed=42] acc=0.9487 f1=0.5889 time=19.08s mem=+45.3MB
+2026-02-28 20:38:20,968 [INFO] --- [63/256] ECGFiveDays | hydra | seed=42 ---
+2026-02-28 20:38:22,724 [INFO] [ECGFiveDays][hydra][seed=42] acc=1.0000 f1=1.0000 time=1.23s mem=+77.1MB
+2026-02-28 20:38:22,725 [INFO] --- [64/256] ECGFiveDays | mrsqm | seed=42 ---
+2026-02-28 20:38:26,204 [INFO] [ECGFiveDays][mrsqm][seed=42] acc=1.0000 f1=1.0000 time=3.46s mem=-1947.8MB
+2026-02-28 20:38:26,204 [INFO] --- [65/256] ElectricDevices | hydra | seed=42 ---
+2026-02-28 20:38:53,620 [INFO] [ElectricDevices][hydra][seed=42] acc=0.7430 f1=0.6652 time=25.96s mem=+5922.5MB
+2026-02-28 20:38:53,622 [INFO] --- [66/256] ElectricDevices | mrsqm | seed=42 ---
+2026-02-28 20:39:45,662 [INFO] [ElectricDevices][mrsqm][seed=42] acc=0.7484 f1=0.6663 time=51.79s mem=-3753.9MB
+2026-02-28 20:39:45,664 [INFO] --- [67/256] EOGHorizontalSignal | hydra | seed=42 ---
+2026-02-28 20:39:55,481 [INFO] [EOGHorizontalSignal][hydra][seed=42] acc=0.5773 f1=0.5766 time=9.07s mem=+1520.7MB
+2026-02-28 20:39:55,482 [INFO] --- [68/256] EOGHorizontalSignal | mrsqm | seed=42 ---
+2026-02-28 20:40:29,674 [INFO] [EOGHorizontalSignal][mrsqm][seed=42] acc=0.6464 f1=0.6593 time=34.08s mem=-2465.3MB
+2026-02-28 20:40:29,675 [INFO] --- [69/256] EOGVerticalSignal | hydra | seed=42 ---
+2026-02-28 20:40:40,349 [INFO] [EOGVerticalSignal][hydra][seed=42] acc=0.4834 f1=0.4597 time=9.07s mem=+1600.8MB
+2026-02-28 20:40:40,349 [INFO] --- [70/256] EOGVerticalSignal | mrsqm | seed=42 ---
+2026-02-28 20:41:14,775 [INFO] [EOGVerticalSignal][mrsqm][seed=42] acc=0.5055 f1=0.4780 time=34.31s mem=-1165.3MB
+2026-02-28 20:41:14,776 [INFO] --- [71/256] EthanolLevel | hydra | seed=42 ---
+2026-02-28 20:41:31,232 [INFO] [EthanolLevel][hydra][seed=42] acc=0.5800 f1=0.5657 time=15.43s mem=+2832.8MB
+2026-02-28 20:41:31,233 [INFO] --- [72/256] EthanolLevel | mrsqm | seed=42 ---
+2026-02-28 20:42:40,811 [INFO] [EthanolLevel][mrsqm][seed=42] acc=0.6540 f1=0.6444 time=69.34s mem=-2783.4MB
+2026-02-28 20:42:40,812 [INFO] --- [73/256] FaceAll | hydra | seed=42 ---
+2026-02-28 20:42:44,604 [INFO] [FaceAll][hydra][seed=42] acc=0.9183 f1=0.9254 time=3.17s mem=+906.8MB
+2026-02-28 20:42:44,604 [INFO] --- [74/256] FaceAll | mrsqm | seed=42 ---
+2026-02-28 20:42:53,457 [INFO] [FaceAll][mrsqm][seed=42] acc=0.7929 f1=0.8280 time=8.80s mem=+289.0MB
+2026-02-28 20:42:53,457 [INFO] --- [75/256] FaceFour | hydra | seed=42 ---
+2026-02-28 20:42:54,313 [INFO] [FaceFour][hydra][seed=42] acc=0.8523 f1=0.8665 time=0.40s mem=+6.8MB
+2026-02-28 20:42:54,314 [INFO] --- [76/256] FaceFour | mrsqm | seed=42 ---
+2026-02-28 20:42:55,867 [INFO] [FaceFour][mrsqm][seed=42] acc=0.9886 f1=0.9904 time=1.54s mem=+29.7MB
+2026-02-28 20:42:55,867 [INFO] --- [77/256] FacesUCR | hydra | seed=42 ---
+2026-02-28 20:43:00,189 [INFO] [FacesUCR][hydra][seed=42] acc=0.9551 f1=0.9407 time=3.13s mem=+732.7MB
+2026-02-28 20:43:00,190 [INFO] --- [78/256] FacesUCR | mrsqm | seed=42 ---
+2026-02-28 20:43:08,451 [INFO] [FacesUCR][mrsqm][seed=42] acc=0.9483 f1=0.9272 time=8.21s mem=+307.9MB
+2026-02-28 20:43:08,451 [INFO] --- [79/256] FiftyWords | hydra | seed=42 ---
+2026-02-28 20:43:11,389 [INFO] [FiftyWords][hydra][seed=42] acc=0.8374 f1=0.7212 time=2.38s mem=+0.4MB
+2026-02-28 20:43:11,390 [INFO] --- [80/256] FiftyWords | mrsqm | seed=42 ---
+2026-02-28 20:43:20,658 [INFO] [FiftyWords][mrsqm][seed=42] acc=0.7956 f1=0.6738 time=9.23s mem=-654.3MB
+2026-02-28 20:43:20,659 [INFO] --- [81/256] Fish | hydra | seed=42 ---
+2026-02-28 20:43:23,287 [INFO] [Fish][hydra][seed=42] acc=0.9886 f1=0.9889 time=1.36s mem=+228.2MB
+2026-02-28 20:43:23,288 [INFO] --- [82/256] Fish | mrsqm | seed=42 ---
+2026-02-28 20:43:29,020 [INFO] [Fish][mrsqm][seed=42] acc=0.9829 f1=0.9815 time=5.70s mem=-1341.4MB
+2026-02-28 20:43:29,020 [INFO] --- [83/256] FordA | hydra | seed=42 ---
+2026-02-28 20:44:00,149 [INFO] [FordA][hydra][seed=42] acc=0.9621 f1=0.9621 time=28.72s mem=-325.9MB
+2026-02-28 20:44:00,151 [INFO] --- [84/256] FordA | mrsqm | seed=42 ---
+2026-02-28 20:45:31,303 [INFO] [FordA][mrsqm][seed=42] acc=0.9576 f1=0.9575 time=90.78s mem=-501.6MB
+2026-02-28 20:45:31,304 [INFO] --- [85/256] FordB | hydra | seed=42 ---
+2026-02-28 20:45:58,450 [INFO] [FordB][hydra][seed=42] acc=0.8198 f1=0.8196 time=25.48s mem=+881.8MB
+2026-02-28 20:45:58,452 [INFO] --- [86/256] FordB | mrsqm | seed=42 ---
+2026-02-28 20:47:22,880 [INFO] [FordB][mrsqm][seed=42] acc=0.8247 f1=0.8243 time=84.10s mem=-36.4MB
+2026-02-28 20:47:22,881 [INFO] --- [87/256] FreezerRegularTrain | hydra | seed=42 ---
+2026-02-28 20:47:32,847 [INFO] [FreezerRegularTrain][hydra][seed=42] acc=0.9979 f1=0.9979 time=9.12s mem=+3085.4MB
+2026-02-28 20:47:32,848 [INFO] --- [88/256] FreezerRegularTrain | mrsqm | seed=42 ---
+2026-02-28 20:47:57,324 [INFO] [FreezerRegularTrain][mrsqm][seed=42] acc=0.9954 f1=0.9954 time=24.35s mem=-2760.0MB
+2026-02-28 20:47:57,325 [INFO] --- [89/256] FreezerSmallTrain | hydra | seed=42 ---
+2026-02-28 20:48:07,659 [INFO] [FreezerSmallTrain][hydra][seed=42] acc=0.9130 f1=0.9130 time=8.90s mem=+1113.0MB
+2026-02-28 20:48:07,660 [INFO] --- [90/256] FreezerSmallTrain | mrsqm | seed=42 ---
+2026-02-28 20:48:30,636 [INFO] [FreezerSmallTrain][mrsqm][seed=42] acc=0.9589 f1=0.9589 time=22.85s mem=-2136.7MB
+2026-02-28 20:48:30,637 [INFO] --- [91/256] Fungi | hydra | seed=42 ---
+2026-02-28 20:48:31,878 [INFO] [Fungi][hydra][seed=42] acc=1.0000 f1=1.0000 time=0.40s mem=+36.0MB
+2026-02-28 20:48:31,879 [INFO] --- [92/256] Fungi | mrsqm | seed=42 ---
+2026-02-28 20:48:33,304 [INFO] [Fungi][mrsqm][seed=42] acc=1.0000 f1=1.0000 time=1.41s mem=+58.7MB
+2026-02-28 20:48:33,305 [INFO] --- [93/256] GestureMidAirD1 | hydra | seed=42 ---
+2026-02-28 20:48:34,725 [INFO] [GestureMidAirD1][hydra][seed=42] acc=0.7462 f1=0.7363 time=1.13s mem=+57.5MB
+2026-02-28 20:48:34,726 [INFO] --- [94/256] GestureMidAirD1 | mrsqm | seed=42 ---
+2026-02-28 20:48:39,411 [INFO] [GestureMidAirD1][mrsqm][seed=42] acc=0.7538 f1=0.7355 time=4.65s mem=+116.5MB
+2026-02-28 20:48:39,412 [INFO] --- [95/256] GestureMidAirD2 | hydra | seed=42 ---
+2026-02-28 20:48:41,489 [INFO] [GestureMidAirD2][hydra][seed=42] acc=0.6769 f1=0.6657 time=1.13s mem=+0.3MB
+2026-02-28 20:48:41,490 [INFO] --- [96/256] GestureMidAirD2 | mrsqm | seed=42 ---
+2026-02-28 20:48:46,194 [INFO] [GestureMidAirD2][mrsqm][seed=42] acc=0.7000 f1=0.6950 time=4.67s mem=+30.1MB
+2026-02-28 20:48:46,195 [INFO] --- [97/256] GestureMidAirD3 | hydra | seed=42 ---
+2026-02-28 20:48:48,291 [INFO] [GestureMidAirD3][hydra][seed=42] acc=0.4769 f1=0.4621 time=1.13s mem=+0.2MB
+2026-02-28 20:48:48,292 [INFO] --- [98/256] GestureMidAirD3 | mrsqm | seed=42 ---
+2026-02-28 20:48:52,904 [INFO] [GestureMidAirD3][mrsqm][seed=42] acc=0.4769 f1=0.4450 time=4.58s mem=-1135.6MB
+2026-02-28 20:48:52,905 [INFO] --- [99/256] GesturePebbleZ1 | hydra | seed=42 ---
+2026-02-28 20:48:54,501 [INFO] [GesturePebbleZ1][hydra][seed=42] acc=0.8837 f1=0.8799 time=1.30s mem=+178.8MB
+2026-02-28 20:48:54,502 [INFO] --- [100/256] GesturePebbleZ1 | mrsqm | seed=42 ---
+2026-02-28 20:48:59,513 [INFO] [GesturePebbleZ1][mrsqm][seed=42] acc=0.9070 f1=0.9020 time=4.98s mem=+32.6MB
+2026-02-28 20:48:59,513 [INFO] --- [101/256] GesturePebbleZ2 | hydra | seed=42 ---
+2026-02-28 20:49:01,940 [INFO] [GesturePebbleZ2][hydra][seed=42] acc=0.8924 f1=0.8889 time=1.26s mem=+26.6MB
+2026-02-28 20:49:01,941 [INFO] --- [102/256] GesturePebbleZ2 | mrsqm | seed=42 ---
+2026-02-28 20:49:07,025 [INFO] [GesturePebbleZ2][mrsqm][seed=42] acc=0.9430 f1=0.9408 time=5.05s mem=+33.0MB
+2026-02-28 20:49:07,026 [INFO] --- [103/256] GunPoint | hydra | seed=42 ---
+2026-02-28 20:49:07,341 [INFO] [GunPoint][hydra][seed=42] acc=1.0000 f1=1.0000 time=0.31s mem=+4.0MB
+2026-02-28 20:49:07,342 [INFO] --- [104/256] GunPoint | mrsqm | seed=42 ---
+2026-02-28 20:49:08,529 [INFO] [GunPoint][mrsqm][seed=42] acc=1.0000 f1=1.0000 time=1.18s mem=+16.3MB
+2026-02-28 20:49:08,529 [INFO] --- [105/256] GunPointAgeSpan | hydra | seed=42 ---
+2026-02-28 20:49:10,144 [INFO] [GunPointAgeSpan][hydra][seed=42] acc=1.0000 f1=1.0000 time=0.73s mem=+24.2MB
+2026-02-28 20:49:10,145 [INFO] --- [106/256] GunPointAgeSpan | mrsqm | seed=42 ---
+2026-02-28 20:49:12,403 [INFO] [GunPointAgeSpan][mrsqm][seed=42] acc=1.0000 f1=1.0000 time=2.24s mem=+19.4MB
+2026-02-28 20:49:12,404 [INFO] --- [107/256] GunPointMaleVersusFemale | hydra | seed=42 ---
+2026-02-28 20:49:14,267 [INFO] [GunPointMaleVersusFemale][hydra][seed=42] acc=1.0000 f1=1.0000 time=0.72s mem=+0.0MB
+2026-02-28 20:49:14,268 [INFO] --- [108/256] GunPointMaleVersusFemale | mrsqm | seed=42 ---
+2026-02-28 20:49:16,531 [INFO] [GunPointMaleVersusFemale][mrsqm][seed=42] acc=0.9968 f1=0.9968 time=2.25s mem=+18.0MB
+2026-02-28 20:49:16,532 [INFO] --- [109/256] GunPointOldVersusYoung | hydra | seed=42 ---
+2026-02-28 20:49:17,516 [INFO] [GunPointOldVersusYoung][hydra][seed=42] acc=1.0000 f1=1.0000 time=0.73s mem=+0.0MB
+2026-02-28 20:49:17,516 [INFO] --- [110/256] GunPointOldVersusYoung | mrsqm | seed=42 ---
+2026-02-28 20:49:19,788 [INFO] [GunPointOldVersusYoung][mrsqm][seed=42] acc=0.9968 f1=0.9968 time=2.26s mem=+18.0MB
+2026-02-28 20:49:19,788 [INFO] --- [111/256] Ham | hydra | seed=42 ---
+2026-02-28 20:49:21,772 [INFO] [Ham][hydra][seed=42] acc=0.7143 f1=0.7130 time=0.80s mem=+0.0MB
+2026-02-28 20:49:21,772 [INFO] --- [112/256] Ham | mrsqm | seed=42 ---
+2026-02-28 20:49:25,278 [INFO] [Ham][mrsqm][seed=42] acc=0.7524 f1=0.7522 time=3.49s mem=+29.2MB
+2026-02-28 20:49:25,278 [INFO] --- [113/256] HandOutlines | hydra | seed=42 ---
+2026-02-28 20:50:14,142 [INFO] [HandOutlines][hydra][seed=42] acc=0.9486 f1=0.9432 time=47.12s mem=+1345.1MB
+2026-02-28 20:50:14,145 [INFO] --- [114/256] HandOutlines | mrsqm | seed=42 ---
+2026-02-28 20:53:09,987 [INFO] [HandOutlines][mrsqm][seed=42] acc=0.9378 f1=0.9322 time=175.03s mem=-1459.8MB
+2026-02-28 20:53:09,988 [INFO] --- [115/256] Haptics | hydra | seed=42 ---
+2026-02-28 20:53:16,939 [INFO] [Haptics][hydra][seed=42] acc=0.5162 f1=0.5048 time=5.45s mem=+1210.4MB
+2026-02-28 20:53:16,942 [INFO] --- [116/256] Haptics | mrsqm | seed=42 ---
+2026-02-28 20:53:37,029 [INFO] [Haptics][mrsqm][seed=42] acc=0.5942 f1=0.5793 time=20.01s mem=-1239.8MB
+2026-02-28 20:53:37,029 [INFO] --- [117/256] Herring | hydra | seed=42 ---
+2026-02-28 20:53:38,613 [INFO] [Herring][hydra][seed=42] acc=0.7344 f1=0.7263 time=0.70s mem=+0.2MB
+2026-02-28 20:53:38,614 [INFO] --- [118/256] Herring | mrsqm | seed=42 ---
+2026-02-28 20:53:41,432 [INFO] [Herring][mrsqm][seed=42] acc=0.6562 f1=0.6267 time=2.80s mem=+42.7MB
+2026-02-28 20:53:41,432 [INFO] --- [119/256] HouseTwenty | hydra | seed=42 ---
+2026-02-28 20:53:45,637 [INFO] [HouseTwenty][hydra][seed=42] acc=0.9496 f1=0.9483 time=3.21s mem=+515.6MB
+2026-02-28 20:53:45,638 [INFO] --- [120/256] HouseTwenty | mrsqm | seed=42 ---
+2026-02-28 20:53:59,061 [INFO] [HouseTwenty][mrsqm][seed=42] acc=0.9664 f1=0.9655 time=13.38s mem=-873.9MB
+2026-02-28 20:53:59,062 [INFO] --- [121/256] InlineSkate | hydra | seed=42 ---
+2026-02-28 20:54:13,934 [INFO] [InlineSkate][hydra][seed=42] acc=0.4673 f1=0.4676 time=13.84s mem=+2360.5MB
+2026-02-28 20:54:13,936 [INFO] --- [122/256] InlineSkate | mrsqm | seed=42 ---
+2026-02-28 20:55:02,388 [INFO] [InlineSkate][mrsqm][seed=42] acc=0.4364 f1=0.4321 time=48.27s mem=-3781.7MB
+2026-02-28 20:55:02,389 [INFO] --- [123/256] InsectEPGRegularTrain | hydra | seed=42 ---
+2026-02-28 20:55:05,033 [INFO] [InsectEPGRegularTrain][hydra][seed=42] acc=1.0000 f1=1.0000 time=2.15s mem=+577.8MB
+2026-02-28 20:55:05,034 [INFO] --- [124/256] InsectEPGRegularTrain | mrsqm | seed=42 ---
+2026-02-28 20:55:11,935 [INFO] [InsectEPGRegularTrain][mrsqm][seed=42] acc=1.0000 f1=1.0000 time=6.87s mem=+125.3MB
+2026-02-28 20:55:11,936 [INFO] --- [125/256] InsectEPGSmallTrain | hydra | seed=42 ---
+2026-02-28 20:55:14,423 [INFO] [InsectEPGSmallTrain][hydra][seed=42] acc=1.0000 f1=1.0000 time=1.65s mem=+0.9MB
+2026-02-28 20:55:14,423 [INFO] --- [126/256] InsectEPGSmallTrain | mrsqm | seed=42 ---
+2026-02-28 20:55:20,155 [INFO] [InsectEPGSmallTrain][mrsqm][seed=42] acc=0.9960 f1=0.9946 time=5.70s mem=+25.3MB
+2026-02-28 20:55:20,155 [INFO] --- [127/256] InsectWingbeatSound | hydra | seed=42 ---
+2026-02-28 20:55:26,158 [INFO] [InsectWingbeatSound][hydra][seed=42] acc=0.6540 f1=0.6443 time=5.27s mem=+1976.3MB
+2026-02-28 20:55:26,159 [INFO] --- [128/256] InsectWingbeatSound | mrsqm | seed=42 ---
+2026-02-28 20:55:43,147 [INFO] [InsectWingbeatSound][mrsqm][seed=42] acc=0.6434 f1=0.6380 time=16.89s mem=+198.4MB
+2026-02-28 20:55:43,148 [INFO] --- [129/256] ItalyPowerDemand | hydra | seed=42 ---
+2026-02-28 20:55:43,472 [INFO] [ItalyPowerDemand][hydra][seed=42] acc=0.9679 f1=0.9679 time=0.31s mem=+0.2MB
+2026-02-28 20:55:43,472 [INFO] --- [130/256] ItalyPowerDemand | mrsqm | seed=42 ---
+2026-02-28 20:55:44,353 [INFO] [ItalyPowerDemand][mrsqm][seed=42] acc=0.9466 f1=0.9465 time=0.87s mem=+10.0MB
+2026-02-28 20:55:44,353 [INFO] --- [131/256] LargeKitchenAppliances | hydra | seed=42 ---
+2026-02-28 20:55:50,827 [INFO] [LargeKitchenAppliances][hydra][seed=42] acc=0.8533 f1=0.8544 time=5.34s mem=+11.0MB
+2026-02-28 20:55:50,828 [INFO] --- [132/256] LargeKitchenAppliances | mrsqm | seed=42 ---
+2026-02-28 20:56:11,426 [INFO] [LargeKitchenAppliances][mrsqm][seed=42] acc=0.8587 f1=0.8582 time=20.51s mem=-1403.4MB
+2026-02-28 20:56:11,426 [INFO] --- [133/256] Lightning2 | hydra | seed=42 ---
+2026-02-28 20:56:13,184 [INFO] [Lightning2][hydra][seed=42] acc=0.7541 f1=0.7498 time=0.87s mem=+79.2MB
+2026-02-28 20:56:13,185 [INFO] --- [134/256] Lightning2 | mrsqm | seed=42 ---
+2026-02-28 20:56:16,578 [INFO] [Lightning2][mrsqm][seed=42] acc=0.8525 f1=0.8484 time=3.37s mem=+51.5MB
+2026-02-28 20:56:16,579 [INFO] --- [135/256] Lightning7 | hydra | seed=42 ---
+2026-02-28 20:56:17,551 [INFO] [Lightning7][hydra][seed=42] acc=0.8356 f1=0.8272 time=0.51s mem=+0.3MB
+2026-02-28 20:56:17,552 [INFO] --- [136/256] Lightning7 | mrsqm | seed=42 ---
+2026-02-28 20:56:19,550 [INFO] [Lightning7][mrsqm][seed=42] acc=0.7397 f1=0.7353 time=1.98s mem=+25.7MB
+2026-02-28 20:56:19,550 [INFO] --- [137/256] Mallat | hydra | seed=42 ---
+2026-02-28 20:56:49,804 [INFO] [Mallat][hydra][seed=42] acc=0.9437 f1=0.9431 time=27.76s mem=+1557.1MB
+2026-02-28 20:56:49,806 [INFO] --- [138/256] Mallat | mrsqm | seed=42 ---
+2026-02-28 20:58:17,132 [INFO] [Mallat][mrsqm][seed=42] acc=0.9851 f1=0.9851 time=86.95s mem=-2886.0MB
+2026-02-28 20:58:17,133 [INFO] --- [139/256] Meat | hydra | seed=42 ---
+2026-02-28 20:58:18,608 [INFO] [Meat][hydra][seed=42] acc=0.9000 f1=0.8988 time=0.58s mem=+86.6MB
+2026-02-28 20:58:18,609 [INFO] --- [140/256] Meat | mrsqm | seed=42 ---
+2026-02-28 20:58:20,908 [INFO] [Meat][mrsqm][seed=42] acc=0.9167 f1=0.9164 time=2.28s mem=+30.4MB
+2026-02-28 20:58:20,909 [INFO] --- [141/256] MedicalImages | hydra | seed=42 ---
+2026-02-28 20:58:22,707 [INFO] [MedicalImages][hydra][seed=42] acc=0.7566 f1=0.6623 time=1.29s mem=+437.9MB
+2026-02-28 20:58:22,708 [INFO] --- [142/256] MedicalImages | mrsqm | seed=42 ---
+2026-02-28 20:58:26,422 [INFO] [MedicalImages][mrsqm][seed=42] acc=0.7276 f1=0.6404 time=3.69s mem=+125.7MB
+2026-02-28 20:58:26,422 [INFO] --- [143/256] MelbournePedestrian | hydra | seed=42 ---
+2026-02-28 20:58:28,543 [INFO] [MelbournePedestrian][hydra][seed=42] acc=0.9379 f1=0.9351 time=1.22s mem=+497.1MB
+2026-02-28 20:58:28,544 [INFO] --- [144/256] MelbournePedestrian | mrsqm | seed=42 ---
+2026-02-28 20:58:31,586 [INFO] [MelbournePedestrian][mrsqm][seed=42] acc=0.8974 f1=0.8935 time=3.02s mem=+196.5MB
+2026-02-28 20:58:31,589 [INFO] --- [145/256] MiddlePhalanxOutlineCorrect | hydra | seed=42 ---
+2026-02-28 20:58:32,971 [INFO] [MiddlePhalanxOutlineCorrect][hydra][seed=42] acc=0.8385 f1=0.8340 time=0.91s mem=+24.5MB
+2026-02-28 20:58:32,973 [INFO] --- [146/256] MiddlePhalanxOutlineCorrect | mrsqm | seed=42 ---
+2026-02-28 20:58:35,354 [INFO] [MiddlePhalanxOutlineCorrect][mrsqm][seed=42] acc=0.8110 f1=0.8057 time=2.36s mem=+27.6MB
+2026-02-28 20:58:35,354 [INFO] --- [147/256] MiddlePhalanxOutlineAgeGroup | hydra | seed=42 ---
+2026-02-28 20:58:36,126 [INFO] [MiddlePhalanxOutlineAgeGroup][hydra][seed=42] acc=0.5714 f1=0.4834 time=0.54s mem=+32.7MB
+2026-02-28 20:58:36,128 [INFO] --- [148/256] MiddlePhalanxOutlineAgeGroup | mrsqm | seed=42 ---
+2026-02-28 20:58:37,904 [INFO] [MiddlePhalanxOutlineAgeGroup][mrsqm][seed=42] acc=0.5714 f1=0.4865 time=1.76s mem=+10.3MB
+2026-02-28 20:58:37,905 [INFO] --- [149/256] MiddlePhalanxTW | hydra | seed=42 ---
+2026-02-28 20:58:39,487 [INFO] [MiddlePhalanxTW][hydra][seed=42] acc=0.5779 f1=0.4096 time=0.52s mem=+0.3MB
+2026-02-28 20:58:39,488 [INFO] --- [150/256] MiddlePhalanxTW | mrsqm | seed=42 ---
+2026-02-28 20:58:41,190 [INFO] [MiddlePhalanxTW][mrsqm][seed=42] acc=0.5130 f1=0.3552 time=1.69s mem=+10.6MB
+2026-02-28 20:58:41,192 [INFO] --- [151/256] MixedShapesRegularTrain | hydra | seed=42 ---
+2026-02-28 20:59:14,746 [INFO] [MixedShapesRegularTrain][hydra][seed=42] acc=0.9814 f1=0.9812 time=31.63s mem=+3517.1MB
+2026-02-28 20:59:14,748 [INFO] --- [152/256] MixedShapesRegularTrain | mrsqm | seed=42 ---
+2026-02-28 21:01:05,177 [INFO] [MixedShapesRegularTrain][mrsqm][seed=42] acc=0.9773 f1=0.9772 time=109.93s mem=-4224.9MB
+2026-02-28 21:01:05,179 [INFO] --- [153/256] MixedShapesSmallTrain | hydra | seed=42 ---
+2026-02-28 21:01:35,040 [INFO] [MixedShapesSmallTrain][hydra][seed=42] acc=0.9654 f1=0.9647 time=28.37s mem=+4526.2MB
+2026-02-28 21:01:35,046 [INFO] --- [154/256] MixedShapesSmallTrain | mrsqm | seed=42 ---
+2026-02-28 21:03:05,932 [INFO] [MixedShapesSmallTrain][mrsqm][seed=42] acc=0.9588 f1=0.9591 time=90.39s mem=-4209.9MB
+2026-02-28 21:03:05,934 [INFO] --- [155/256] MoteStrain | hydra | seed=42 ---
+2026-02-28 21:03:07,794 [INFO] [MoteStrain][hydra][seed=42] acc=0.9313 f1=0.9305 time=1.34s mem=+660.1MB
+2026-02-28 21:03:07,795 [INFO] --- [156/256] MoteStrain | mrsqm | seed=42 ---
+2026-02-28 21:03:10,687 [INFO] [MoteStrain][mrsqm][seed=42] acc=0.9473 f1=0.9469 time=2.87s mem=+180.0MB
+2026-02-28 21:03:10,687 [INFO] --- [157/256] NonInvasiveFetalECGThorax1 | hydra | seed=42 ---
+2026-02-28 21:03:43,775 [INFO] [NonInvasiveFetalECGThorax1][hydra][seed=42] acc=0.9399 f1=0.9353 time=30.41s mem=+2662.0MB
+2026-02-28 21:03:43,776 [INFO] --- [158/256] NonInvasiveFetalECGThorax1 | mrsqm | seed=42 ---
+2026-02-28 21:05:31,808 [INFO] [NonInvasiveFetalECGThorax1][mrsqm][seed=42] acc=0.9232 f1=0.9179 time=107.59s mem=-3705.3MB
+2026-02-28 21:05:31,808 [INFO] --- [159/256] NonInvasiveFetalECGThorax2 | hydra | seed=42 ---
+2026-02-28 21:06:01,313 [INFO] [NonInvasiveFetalECGThorax2][hydra][seed=42] acc=0.9588 f1=0.9554 time=26.74s mem=+6030.5MB
+2026-02-28 21:06:01,314 [INFO] --- [160/256] NonInvasiveFetalECGThorax2 | mrsqm | seed=42 ---
+2026-02-28 21:07:41,734 [INFO] [NonInvasiveFetalECGThorax2][mrsqm][seed=42] acc=0.9420 f1=0.9388 time=100.02s mem=-5529.1MB
+2026-02-28 21:07:41,734 [INFO] --- [161/256] OliveOil | hydra | seed=42 ---
+2026-02-28 21:07:42,592 [INFO] [OliveOil][hydra][seed=42] acc=0.9667 f1=0.9760 time=0.38s mem=+4.8MB
+2026-02-28 21:07:42,594 [INFO] --- [162/256] OliveOil | mrsqm | seed=42 ---
+2026-02-28 21:07:44,159 [INFO] [OliveOil][mrsqm][seed=42] acc=0.9667 f1=0.9760 time=1.55s mem=+11.7MB
+2026-02-28 21:07:44,161 [INFO] --- [163/256] OSULeaf | hydra | seed=42 ---
+2026-02-28 21:07:45,849 [INFO] [OSULeaf][hydra][seed=42] acc=0.9876 f1=0.9849 time=1.66s mem=+439.4MB
+2026-02-28 21:07:45,850 [INFO] --- [164/256] OSULeaf | mrsqm | seed=42 ---
+2026-02-28 21:07:52,483 [INFO] [OSULeaf][mrsqm][seed=42] acc=0.9959 f1=0.9967 time=6.60s mem=+45.9MB
+2026-02-28 21:07:52,485 [INFO] --- [165/256] PhalangesOutlinesCorrect | hydra | seed=42 ---
+2026-02-28 21:07:56,299 [INFO] [PhalangesOutlinesCorrect][hydra][seed=42] acc=0.8089 f1=0.7882 time=2.71s mem=+398.0MB
+2026-02-28 21:07:56,302 [INFO] --- [166/256] PhalangesOutlinesCorrect | mrsqm | seed=42 ---
+2026-02-28 21:08:02,585 [INFO] [PhalangesOutlinesCorrect][mrsqm][seed=42] acc=0.8100 f1=0.7952 time=6.24s mem=+227.8MB
+2026-02-28 21:08:02,586 [INFO] --- [167/256] Phoneme | hydra | seed=42 ---
+2026-02-28 21:08:24,452 [INFO] [Phoneme][hydra][seed=42] acc=0.3244 f1=0.1572 time=20.37s mem=+5048.1MB
+2026-02-28 21:08:24,454 [INFO] --- [168/256] Phoneme | mrsqm | seed=42 ---
+2026-02-28 21:09:37,182 [INFO] [Phoneme][mrsqm][seed=42] acc=0.3660 f1=0.1724 time=72.35s mem=-6250.9MB
+2026-02-28 21:09:37,182 [INFO] --- [169/256] PickupGestureWiimoteZ | hydra | seed=42 ---
+2026-02-28 21:09:37,580 [INFO] [PickupGestureWiimoteZ][hydra][seed=42] acc=0.8400 f1=0.8344 time=0.39s mem=+7.7MB
+2026-02-28 21:09:37,581 [INFO] --- [170/256] PickupGestureWiimoteZ | mrsqm | seed=42 ---
+2026-02-28 21:09:39,141 [INFO] [PickupGestureWiimoteZ][mrsqm][seed=42] acc=0.7800 f1=0.7758 time=1.55s mem=+32.7MB
+2026-02-28 21:09:39,142 [INFO] --- [171/256] PigAirwayPressure | hydra | seed=42 ---
+2026-02-28 21:09:45,923 [INFO] [PigAirwayPressure][hydra][seed=42] acc=0.7740 f1=0.7637 time=5.54s mem=+1641.3MB
+2026-02-28 21:09:45,924 [INFO] --- [172/256] PigAirwayPressure | mrsqm | seed=42 ---
+2026-02-28 21:10:09,840 [INFO] [PigAirwayPressure][mrsqm][seed=42] acc=0.9615 f1=0.9606 time=23.83s mem=-721.6MB
+2026-02-28 21:10:09,843 [INFO] --- [173/256] PigArtPressure | hydra | seed=42 ---
+2026-02-28 21:10:15,573 [INFO] [PigArtPressure][hydra][seed=42] acc=0.9856 f1=0.9849 time=5.24s mem=+640.0MB
+2026-02-28 21:10:15,573 [INFO] --- [174/256] PigArtPressure | mrsqm | seed=42 ---
+2026-02-28 21:10:39,850 [INFO] [PigArtPressure][mrsqm][seed=42] acc=0.9856 f1=0.9858 time=24.19s mem=-1712.7MB
+2026-02-28 21:10:39,851 [INFO] --- [175/256] PigCVP | hydra | seed=42 ---
+2026-02-28 21:10:46,617 [INFO] [PigCVP][hydra][seed=42] acc=0.9663 f1=0.9654 time=5.51s mem=+1844.3MB
+2026-02-28 21:10:46,620 [INFO] --- [176/256] PigCVP | mrsqm | seed=42 ---
+2026-02-28 21:11:10,632 [INFO] [PigCVP][mrsqm][seed=42] acc=0.9471 f1=0.9499 time=23.92s mem=+176.2MB
+2026-02-28 21:11:10,632 [INFO] --- [177/256] PLAID | hydra | seed=42 ---
+2026-02-28 21:11:27,102 [INFO] [PLAID][hydra][seed=42] acc=0.8622 f1=0.8106 time=15.64s mem=+1922.2MB
+2026-02-28 21:11:27,103 [INFO] --- [178/256] PLAID | mrsqm | seed=42 ---
+2026-02-28 21:12:23,066 [INFO] [PLAID][mrsqm][seed=42] acc=0.8510 f1=0.7898 time=55.60s mem=-3592.5MB
+2026-02-28 21:12:23,066 [INFO] --- [179/256] Plane | hydra | seed=42 ---
+2026-02-28 21:12:23,841 [INFO] [Plane][hydra][seed=42] acc=1.0000 f1=1.0000 time=0.31s mem=+41.9MB
+2026-02-28 21:12:23,842 [INFO] --- [180/256] Plane | mrsqm | seed=42 ---
+2026-02-28 21:12:25,095 [INFO] [Plane][mrsqm][seed=42] acc=1.0000 f1=1.0000 time=1.24s mem=+18.6MB
+2026-02-28 21:12:25,095 [INFO] --- [181/256] PowerCons | hydra | seed=42 ---
+2026-02-28 21:12:26,336 [INFO] [PowerCons][hydra][seed=42] acc=0.9722 f1=0.9722 time=0.51s mem=+70.7MB
+2026-02-28 21:12:26,336 [INFO] --- [182/256] PowerCons | mrsqm | seed=42 ---
+2026-02-28 21:12:28,352 [INFO] [PowerCons][mrsqm][seed=42] acc=0.9500 f1=0.9500 time=2.00s mem=+47.7MB
+2026-02-28 21:12:28,352 [INFO] --- [183/256] ProximalPhalanxOutlineCorrect | hydra | seed=42 ---
+2026-02-28 21:12:29,464 [INFO] [ProximalPhalanxOutlineCorrect][hydra][seed=42] acc=0.9072 f1=0.8841 time=0.81s mem=+112.4MB
+2026-02-28 21:12:29,465 [INFO] --- [184/256] ProximalPhalanxOutlineCorrect | mrsqm | seed=42 ---
+2026-02-28 21:12:31,688 [INFO] [ProximalPhalanxOutlineCorrect][mrsqm][seed=42] acc=0.9175 f1=0.9003 time=2.20s mem=+130.1MB
+2026-02-28 21:12:31,689 [INFO] --- [185/256] ProximalPhalanxOutlineAgeGroup | hydra | seed=42 ---
+2026-02-28 21:12:33,265 [INFO] [ProximalPhalanxOutlineAgeGroup][hydra][seed=42] acc=0.8634 f1=0.7894 time=0.52s mem=+3.4MB
+2026-02-28 21:12:33,265 [INFO] --- [186/256] ProximalPhalanxOutlineAgeGroup | mrsqm | seed=42 ---
+2026-02-28 21:12:34,978 [INFO] [ProximalPhalanxOutlineAgeGroup][mrsqm][seed=42] acc=0.8341 f1=0.7381 time=1.70s mem=+10.0MB
+2026-02-28 21:12:34,980 [INFO] --- [187/256] ProximalPhalanxTW | hydra | seed=42 ---
+2026-02-28 21:12:36,339 [INFO] [ProximalPhalanxTW][hydra][seed=42] acc=0.8000 f1=0.4993 time=0.50s mem=+0.2MB
+2026-02-28 21:12:36,341 [INFO] --- [188/256] ProximalPhalanxTW | mrsqm | seed=42 ---
+2026-02-28 21:12:37,984 [INFO] [ProximalPhalanxTW][mrsqm][seed=42] acc=0.8000 f1=0.5003 time=1.63s mem=+8.6MB
+2026-02-28 21:12:37,984 [INFO] --- [189/256] RefrigerationDevices | hydra | seed=42 ---
+2026-02-28 21:12:43,829 [INFO] [RefrigerationDevices][hydra][seed=42] acc=0.4933 f1=0.4893 time=5.29s mem=+781.5MB
+2026-02-28 21:12:43,831 [INFO] --- [190/256] RefrigerationDevices | mrsqm | seed=42 ---
+2026-02-28 21:13:03,518 [INFO] [RefrigerationDevices][mrsqm][seed=42] acc=0.6293 f1=0.6309 time=19.61s mem=+48.3MB
+2026-02-28 21:13:03,519 [INFO] --- [191/256] Rock | hydra | seed=42 ---
+2026-02-28 21:13:06,005 [INFO] [Rock][hydra][seed=42] acc=0.9200 f1=0.9194 time=2.19s mem=+2.0MB
+2026-02-28 21:13:06,007 [INFO] --- [192/256] Rock | mrsqm | seed=42 ---
+2026-02-28 21:13:14,460 [INFO] [Rock][mrsqm][seed=42] acc=0.9200 f1=0.9194 time=8.42s mem=+100.4MB
+2026-02-28 21:13:14,461 [INFO] --- [193/256] ScreenType | hydra | seed=42 ---
+2026-02-28 21:13:19,867 [INFO] [ScreenType][hydra][seed=42] acc=0.5013 f1=0.5006 time=5.10s mem=+0.4MB
+2026-02-28 21:13:19,868 [INFO] --- [194/256] ScreenType | mrsqm | seed=42 ---
+2026-02-28 21:13:39,021 [INFO] [ScreenType][mrsqm][seed=42] acc=0.5813 f1=0.5815 time=19.07s mem=+30.3MB
+2026-02-28 21:13:39,023 [INFO] --- [195/256] SemgHandGenderCh2 | hydra | seed=42 ---
+2026-02-28 21:13:54,115 [INFO] [SemgHandGenderCh2][hydra][seed=42] acc=0.8283 f1=0.8171 time=14.24s mem=+3264.5MB
+2026-02-28 21:13:54,116 [INFO] --- [196/256] SemgHandGenderCh2 | mrsqm | seed=42 ---
+2026-02-28 21:14:46,554 [INFO] [SemgHandGenderCh2][mrsqm][seed=42] acc=0.8550 f1=0.8431 time=52.26s mem=-4253.9MB
+2026-02-28 21:14:46,557 [INFO] --- [197/256] SemgHandMovementCh2 | hydra | seed=42 ---
+2026-02-28 21:15:01,708 [INFO] [SemgHandMovementCh2][hydra][seed=42] acc=0.4667 f1=0.4673 time=13.16s mem=+2420.4MB
+2026-02-28 21:15:01,709 [INFO] --- [198/256] SemgHandMovementCh2 | mrsqm | seed=42 ---
+2026-02-28 21:15:56,151 [INFO] [SemgHandMovementCh2][mrsqm][seed=42] acc=0.5822 f1=0.5788 time=54.26s mem=-1586.2MB
+2026-02-28 21:15:56,151 [INFO] --- [199/256] SemgHandSubjectCh2 | hydra | seed=42 ---
+2026-02-28 21:16:11,119 [INFO] [SemgHandSubjectCh2][hydra][seed=42] acc=0.7667 f1=0.7656 time=13.15s mem=+1686.8MB
+2026-02-28 21:16:11,120 [INFO] --- [200/256] SemgHandSubjectCh2 | mrsqm | seed=42 ---
+2026-02-28 21:17:05,283 [INFO] [SemgHandSubjectCh2][mrsqm][seed=42] acc=0.8311 f1=0.8306 time=53.98s mem=-1717.7MB
+2026-02-28 21:17:05,285 [INFO] --- [201/256] ShakeGestureWiimoteZ | hydra | seed=42 ---
+2026-02-28 21:17:06,131 [INFO] [ShakeGestureWiimoteZ][hydra][seed=42] acc=0.9200 f1=0.9206 time=0.40s mem=+19.9MB
+2026-02-28 21:17:06,132 [INFO] --- [202/256] ShakeGestureWiimoteZ | mrsqm | seed=42 ---
+2026-02-28 21:17:07,820 [INFO] [ShakeGestureWiimoteZ][mrsqm][seed=42] acc=0.9200 f1=0.9164 time=1.67s mem=+26.5MB
+2026-02-28 21:17:07,820 [INFO] --- [203/256] ShapeletSim | hydra | seed=42 ---
+2026-02-28 21:17:09,739 [INFO] [ShapeletSim][hydra][seed=42] acc=0.9833 f1=0.9833 time=0.96s mem=+253.4MB
+2026-02-28 21:17:09,740 [INFO] --- [204/256] ShapeletSim | mrsqm | seed=42 ---
+2026-02-28 21:17:13,181 [INFO] [ShapeletSim][mrsqm][seed=42] acc=1.0000 f1=1.0000 time=3.42s mem=+30.8MB
+2026-02-28 21:17:13,182 [INFO] --- [205/256] ShapesAll | hydra | seed=42 ---
+2026-02-28 21:17:19,325 [INFO] [ShapesAll][hydra][seed=42] acc=0.9250 f1=0.9237 time=5.61s mem=+758.4MB
+2026-02-28 21:17:19,326 [INFO] --- [206/256] ShapesAll | mrsqm | seed=42 ---
+2026-02-28 21:17:41,044 [INFO] [ShapesAll][mrsqm][seed=42] acc=0.9467 f1=0.9461 time=21.62s mem=+310.9MB
+2026-02-28 21:17:41,047 [INFO] --- [207/256] SmallKitchenAppliances | hydra | seed=42 ---
+2026-02-28 21:17:46,764 [INFO] [SmallKitchenAppliances][hydra][seed=42] acc=0.8107 f1=0.8096 time=5.14s mem=+32.7MB
+2026-02-28 21:17:46,766 [INFO] --- [208/256] SmallKitchenAppliances | mrsqm | seed=42 ---
+2026-02-28 21:18:06,057 [INFO] [SmallKitchenAppliances][mrsqm][seed=42] acc=0.8400 f1=0.8392 time=19.21s mem=-1504.0MB
+2026-02-28 21:18:06,059 [INFO] --- [209/256] SmoothSubspace | hydra | seed=42 ---
+2026-02-28 21:18:06,676 [INFO] [SmoothSubspace][hydra][seed=42] acc=0.9600 f1=0.9600 time=0.04s mem=+0.2MB
+2026-02-28 21:18:06,677 [INFO] --- [210/256] SmoothSubspace | mrsqm | seed=42 ---
+2026-02-28 21:18:06,850 [INFO] [SmoothSubspace][mrsqm][seed=42] acc=0.8467 f1=0.8481 time=0.16s mem=+2.5MB
+2026-02-28 21:18:06,850 [INFO] --- [211/256] SonyAIBORobotSurface1 | hydra | seed=42 ---
+2026-02-28 21:18:07,812 [INFO] [SonyAIBORobotSurface1][hydra][seed=42] acc=0.9201 f1=0.9198 time=0.50s mem=+85.6MB
+2026-02-28 21:18:07,812 [INFO] --- [212/256] SonyAIBORobotSurface1 | mrsqm | seed=42 ---
+2026-02-28 21:18:09,062 [INFO] [SonyAIBORobotSurface1][mrsqm][seed=42] acc=0.8203 f1=0.8202 time=1.23s mem=+10.5MB
+2026-02-28 21:18:09,064 [INFO] --- [213/256] SonyAIBORobotSurface2 | hydra | seed=42 ---
+2026-02-28 21:18:10,640 [INFO] [SonyAIBORobotSurface2][hydra][seed=42] acc=0.9402 f1=0.9374 time=0.71s mem=+31.6MB
+2026-02-28 21:18:10,641 [INFO] --- [214/256] SonyAIBORobotSurface2 | mrsqm | seed=42 ---
+2026-02-28 21:18:12,309 [INFO] [SonyAIBORobotSurface2][mrsqm][seed=42] acc=0.9318 f1=0.9282 time=1.65s mem=+123.8MB
+2026-02-28 21:18:12,309 [INFO] --- [215/256] StarLightCurves | hydra | seed=42 ---
+2026-02-28 21:25:06,629 [INFO] [StarLightCurves][hydra][seed=42] acc=0.9814 f1=0.9718 time=409.91s mem=+5435.4MB
+2026-02-28 21:25:06,643 [INFO] --- [216/256] StarLightCurves | mrsqm | seed=42 ---
+2026-02-28 21:30:42,167 [INFO] [StarLightCurves][mrsqm][seed=42] acc=0.9815 f1=0.9725 time=333.81s mem=-2672.7MB
+2026-02-28 21:30:42,172 [INFO] --- [217/256] Strawberry | hydra | seed=42 ---
+2026-02-28 21:30:46,172 [INFO] [Strawberry][hydra][seed=42] acc=0.9757 f1=0.9737 time=3.42s mem=-138.9MB
+2026-02-28 21:30:46,173 [INFO] --- [218/256] Strawberry | mrsqm | seed=42 ---
+2026-02-28 21:30:54,637 [INFO] [Strawberry][mrsqm][seed=42] acc=0.9730 f1=0.9708 time=8.42s mem=+133.3MB
+2026-02-28 21:30:54,637 [INFO] --- [219/256] SwedishLeaf | hydra | seed=42 ---
+2026-02-28 21:30:56,641 [INFO] [SwedishLeaf][hydra][seed=42] acc=0.9760 f1=0.9761 time=1.47s mem=+2.9MB
+2026-02-28 21:30:56,642 [INFO] --- [220/256] SwedishLeaf | mrsqm | seed=42 ---
+2026-02-28 21:31:01,821 [INFO] [SwedishLeaf][mrsqm][seed=42] acc=0.9552 f1=0.9556 time=5.15s mem=-2035.6MB
+2026-02-28 21:31:01,823 [INFO] --- [221/256] Symbols | hydra | seed=42 ---
+2026-02-28 21:31:07,628 [INFO] [Symbols][hydra][seed=42] acc=0.9789 f1=0.9792 time=4.60s mem=+1276.9MB
+2026-02-28 21:31:07,630 [INFO] --- [222/256] Symbols | mrsqm | seed=42 ---
+2026-02-28 21:31:20,330 [INFO] [Symbols][mrsqm][seed=42] acc=0.9789 f1=0.9791 time=12.63s mem=+306.9MB
+2026-02-28 21:31:20,332 [INFO] --- [223/256] SyntheticControl | hydra | seed=42 ---
+2026-02-28 21:31:21,240 [INFO] [SyntheticControl][hydra][seed=42] acc=0.9633 f1=0.9632 time=0.44s mem=+15.1MB
+2026-02-28 21:31:21,241 [INFO] --- [224/256] SyntheticControl | mrsqm | seed=42 ---
+2026-02-28 21:31:22,717 [INFO] [SyntheticControl][mrsqm][seed=42] acc=0.9733 f1=0.9733 time=1.46s mem=+19.2MB
+2026-02-28 21:31:22,719 [INFO] --- [225/256] ToeSegmentation1 | hydra | seed=42 ---
+2026-02-28 21:31:24,422 [INFO] [ToeSegmentation1][hydra][seed=42] acc=0.9561 f1=0.9561 time=0.71s mem=+11.3MB
+2026-02-28 21:31:24,422 [INFO] --- [226/256] ToeSegmentation1 | mrsqm | seed=42 ---
+2026-02-28 21:31:26,943 [INFO] [ToeSegmentation1][mrsqm][seed=42] acc=0.9737 f1=0.9736 time=2.50s mem=+27.2MB
+2026-02-28 21:31:26,943 [INFO] --- [227/256] ToeSegmentation2 | hydra | seed=42 ---
+2026-02-28 21:31:27,985 [INFO] [ToeSegmentation2][hydra][seed=42] acc=0.8923 f1=0.8317 time=0.55s mem=+34.2MB
+2026-02-28 21:31:27,985 [INFO] --- [228/256] ToeSegmentation2 | mrsqm | seed=42 ---
+2026-02-28 21:31:30,116 [INFO] [ToeSegmentation2][mrsqm][seed=42] acc=0.9385 f1=0.9090 time=2.11s mem=+26.3MB
+2026-02-28 21:31:30,119 [INFO] --- [229/256] Trace | hydra | seed=42 ---
+2026-02-28 21:31:31,121 [INFO] [Trace][hydra][seed=42] acc=1.0000 f1=1.0000 time=0.53s mem=+0.0MB
+2026-02-28 21:31:31,123 [INFO] --- [230/256] Trace | mrsqm | seed=42 ---
+2026-02-28 21:31:33,219 [INFO] [Trace][mrsqm][seed=42] acc=1.0000 f1=1.0000 time=2.08s mem=+23.6MB
+2026-02-28 21:31:33,219 [INFO] --- [231/256] TwoLeadECG | hydra | seed=42 ---
+2026-02-28 21:31:35,340 [INFO] [TwoLeadECG][hydra][seed=42] acc=0.9991 f1=0.9991 time=1.15s mem=+81.3MB
+2026-02-28 21:31:35,341 [INFO] --- [232/256] TwoLeadECG | mrsqm | seed=42 ---
+2026-02-28 21:31:37,736 [INFO] [TwoLeadECG][mrsqm][seed=42] acc=0.9956 f1=0.9956 time=2.37s mem=+21.2MB
+2026-02-28 21:31:37,740 [INFO] --- [233/256] TwoPatterns | hydra | seed=42 ---
+2026-02-28 21:31:46,160 [INFO] [TwoPatterns][hydra][seed=42] acc=0.9860 f1=0.9860 time=7.93s mem=+2214.2MB
+2026-02-28 21:31:46,161 [INFO] --- [234/256] TwoPatterns | mrsqm | seed=42 ---
+2026-02-28 21:32:04,732 [INFO] [TwoPatterns][mrsqm][seed=42] acc=0.9975 f1=0.9975 time=18.46s mem=-1076.4MB
+2026-02-28 21:32:04,735 [INFO] --- [235/256] UMD | hydra | seed=42 ---
+2026-02-28 21:32:05,987 [INFO] [UMD][hydra][seed=42] acc=0.9861 f1=0.9861 time=0.28s mem=+0.6MB
+2026-02-28 21:32:05,987 [INFO] --- [236/256] UMD | mrsqm | seed=42 ---
+2026-02-28 21:32:07,078 [INFO] [UMD][mrsqm][seed=42] acc=0.9653 f1=0.9655 time=1.08s mem=+15.7MB
+2026-02-28 21:32:07,080 [INFO] --- [237/256] UWaveGestureLibraryAll | hydra | seed=42 ---
+2026-02-28 21:32:47,834 [INFO] [UWaveGestureLibraryAll][hydra][seed=42] acc=0.9735 f1=0.9733 time=38.89s mem=+4698.4MB
+2026-02-28 21:32:47,844 [INFO] --- [238/256] UWaveGestureLibraryAll | mrsqm | seed=42 ---
+2026-02-28 21:35:07,627 [INFO] [UWaveGestureLibraryAll][mrsqm][seed=42] acc=0.9481 f1=0.9479 time=139.11s mem=-9134.1MB
+2026-02-28 21:35:07,630 [INFO] --- [239/256] UWaveGestureLibraryX | hydra | seed=42 ---
+2026-02-28 21:35:22,736 [INFO] [UWaveGestureLibraryX][hydra][seed=42] acc=0.8573 f1=0.8532 time=13.38s mem=+4909.1MB
+2026-02-28 21:35:22,736 [INFO] --- [240/256] UWaveGestureLibraryX | mrsqm | seed=42 ---
+2026-02-28 21:36:03,373 [INFO] [UWaveGestureLibraryX][mrsqm][seed=42] acc=0.8423 f1=0.8395 time=40.42s mem=-1958.6MB
+2026-02-28 21:36:03,374 [INFO] --- [241/256] UWaveGestureLibraryY | hydra | seed=42 ---
+2026-02-28 21:36:17,272 [INFO] [UWaveGestureLibraryY][hydra][seed=42] acc=0.7984 f1=0.7964 time=13.09s mem=+2700.3MB
+2026-02-28 21:36:17,273 [INFO] --- [242/256] UWaveGestureLibraryY | mrsqm | seed=42 ---
+2026-02-28 21:36:58,294 [INFO] [UWaveGestureLibraryY][mrsqm][seed=42] acc=0.7800 f1=0.7773 time=40.81s mem=-3527.8MB
+2026-02-28 21:36:58,296 [INFO] --- [243/256] UWaveGestureLibraryZ | hydra | seed=42 ---
+2026-02-28 21:37:12,413 [INFO] [UWaveGestureLibraryZ][hydra][seed=42] acc=0.8009 f1=0.7973 time=13.27s mem=+3700.4MB
+2026-02-28 21:37:12,417 [INFO] --- [244/256] UWaveGestureLibraryZ | mrsqm | seed=42 ---
+2026-02-28 21:37:53,310 [INFO] [UWaveGestureLibraryZ][mrsqm][seed=42] acc=0.7976 f1=0.7952 time=40.68s mem=-3896.0MB
+2026-02-28 21:37:53,311 [INFO] --- [245/256] Wafer | hydra | seed=42 ---
+2026-02-28 21:38:05,568 [INFO] [Wafer][hydra][seed=42] acc=1.0000 f1=1.0000 time=11.69s mem=+3486.0MB
+2026-02-28 21:38:05,569 [INFO] --- [246/256] Wafer | mrsqm | seed=42 ---
+2026-02-28 21:38:36,245 [INFO] [Wafer][mrsqm][seed=42] acc=1.0000 f1=1.0000 time=30.51s mem=-1685.3MB
+2026-02-28 21:38:36,246 [INFO] --- [247/256] Wine | hydra | seed=42 ---
+2026-02-28 21:38:36,959 [INFO] [Wine][hydra][seed=42] acc=0.8889 f1=0.8889 time=0.26s mem=+0.6MB
+2026-02-28 21:38:36,960 [INFO] --- [248/256] Wine | mrsqm | seed=42 ---
+2026-02-28 21:38:38,048 [INFO] [Wine][mrsqm][seed=42] acc=0.8333 f1=0.8328 time=1.07s mem=+9.5MB
+2026-02-28 21:38:38,049 [INFO] --- [249/256] WordSynonyms | hydra | seed=42 ---
+2026-02-28 21:38:41,637 [INFO] [WordSynonyms][hydra][seed=42] acc=0.7445 f1=0.6150 time=2.46s mem=+103.0MB
+2026-02-28 21:38:41,637 [INFO] --- [250/256] WordSynonyms | mrsqm | seed=42 ---
+2026-02-28 21:38:49,355 [INFO] [WordSynonyms][mrsqm][seed=42] acc=0.6865 f1=0.5413 time=7.67s mem=-462.4MB
+2026-02-28 21:38:49,355 [INFO] --- [251/256] Worms | hydra | seed=42 ---
+2026-02-28 21:38:52,519 [INFO] [Worms][hydra][seed=42] acc=0.7403 f1=0.7209 time=2.10s mem=+135.9MB
+2026-02-28 21:38:52,519 [INFO] --- [252/256] Worms | mrsqm | seed=42 ---
+2026-02-28 21:39:01,956 [INFO] [Worms][mrsqm][seed=42] acc=0.7143 f1=0.6679 time=9.40s mem=+43.6MB
+2026-02-28 21:39:01,957 [INFO] --- [253/256] WormsTwoClass | hydra | seed=42 ---
+2026-02-28 21:39:04,556 [INFO] [WormsTwoClass][hydra][seed=42] acc=0.7662 f1=0.7630 time=2.05s mem=+0.2MB
+2026-02-28 21:39:04,557 [INFO] --- [254/256] WormsTwoClass | mrsqm | seed=42 ---
+2026-02-28 21:39:13,926 [INFO] [WormsTwoClass][mrsqm][seed=42] acc=0.7792 f1=0.7779 time=9.33s mem=+42.5MB
+2026-02-28 21:39:13,928 [INFO] --- [255/256] Yoga | hydra | seed=42 ---
+2026-02-28 21:39:28,035 [INFO] [Yoga][hydra][seed=42] acc=0.9327 f1=0.9323 time=12.24s mem=+3277.7MB
+2026-02-28 21:39:28,036 [INFO] --- [256/256] Yoga | mrsqm | seed=42 ---
+2026-02-28 21:40:08,835 [INFO] [Yoga][mrsqm][seed=42] acc=0.9160 f1=0.9155 time=40.59s mem=-3137.4MB
+2026-02-28 21:40:08,899 [INFO] 
+=== ACCURACY SUMMARY (mean per dataset) ===
+2026-02-28 21:40:08,951 [INFO] 
+model                              hydra     mrsqm
+dataset                                           
+ACSF1                           0.880000  0.930000
+Adiac                           0.813299  0.818414
+AllGestureWiimoteX              0.692857  0.630000
+AllGestureWiimoteY              0.715714  0.650000
+AllGestureWiimoteZ              0.678571  0.641429
+ArrowHead                       0.811429  0.811429
+BME                             1.000000  0.820000
+Beef                            0.833333  0.766667
+BeetleFly                       0.900000  0.950000
+BirdChicken                     0.900000  0.900000
+CBF                             0.991111  1.000000
+Car                             0.933333  0.833333
+Chinatown                       0.982507  0.962099
+ChlorineConcentration           0.774740  0.712500
+CinCECGTorso                    0.994928  0.932609
+Coffee                          1.000000  0.964286
+Computers                       0.712000  0.764000
+CricketX                        0.812821  0.802564
+CricketY                        0.823077  0.825641
+CricketZ                        0.800000  0.823077
+Crop                            0.735893  0.723452
+DiatomSizeReduction             0.947712  0.898693
+DistalPhalanxOutlineAgeGroup    0.769784  0.726619
+DistalPhalanxOutlineCorrect     0.750000  0.775362
+DistalPhalanxTW                 0.705036  0.705036
+DodgerLoopDay                   0.571429  0.571429
+DodgerLoopGame                  0.811024  0.881890
+DodgerLoopWeekend               0.976190  0.968254
+ECG200                          0.890000  0.870000
+ECG5000                         0.947778  0.948667
+ECGFiveDays                     1.000000  1.000000
+EOGHorizontalSignal             0.577348  0.646409
+EOGVerticalSignal               0.483425  0.505525
+Earthquakes                     0.741007  0.769784
+ElectricDevices                 0.742965  0.748411
+EthanolLevel                    0.580000  0.654000
+FaceAll                         0.918343  0.792899
+FaceFour                        0.852273  0.988636
+FacesUCR                        0.955122  0.948293
+FiftyWords                      0.837363  0.795604
+Fish                            0.988571  0.982857
+FordA                           0.962121  0.957576
+FordB                           0.819753  0.824691
+FreezerRegularTrain             0.997895  0.995439
+FreezerSmallTrain               0.912982  0.958947
+Fungi                           1.000000  1.000000
+GestureMidAirD1                 0.746154  0.753846
+GestureMidAirD2                 0.676923  0.700000
+GestureMidAirD3                 0.476923  0.476923
+GesturePebbleZ1                 0.883721  0.906977
+GesturePebbleZ2                 0.892405  0.943038
+GunPoint                        1.000000  1.000000
+GunPointAgeSpan                 1.000000  1.000000
+GunPointMaleVersusFemale        1.000000  0.996835
+GunPointOldVersusYoung          1.000000  0.996825
+Ham                             0.714286  0.752381
+HandOutlines                    0.948649  0.937838
+Haptics                         0.516234  0.594156
+Herring                         0.734375  0.656250
+HouseTwenty                     0.949580  0.966387
+InlineSkate                     0.467273  0.436364
+InsectEPGRegularTrain           1.000000  1.000000
+InsectEPGSmallTrain             1.000000  0.995984
+InsectWingbeatSound             0.654040  0.643434
+ItalyPowerDemand                0.967930  0.946550
+LargeKitchenAppliances          0.853333  0.858667
+Lightning2                      0.754098  0.852459
+Lightning7                      0.835616  0.739726
+Mallat                          0.943710  0.985075
+Meat                            0.900000  0.916667
+MedicalImages                   0.756579  0.727632
+MelbournePedestrian             0.937904  0.897370
+MiddlePhalanxOutlineAgeGroup    0.571429  0.571429
+MiddlePhalanxOutlineCorrect     0.838488  0.810997
+MiddlePhalanxTW                 0.577922  0.512987
+MixedShapesRegularTrain         0.981443  0.977320
+MixedShapesSmallTrain           0.965361  0.958763
+MoteStrain                      0.931310  0.947284
+NonInvasiveFetalECGThorax1      0.939949  0.923155
+NonInvasiveFetalECGThorax2      0.958779  0.941985
+OSULeaf                         0.987603  0.995868
+OliveOil                        0.966667  0.966667
+PLAID                           0.862197  0.851024
+PhalangesOutlinesCorrect        0.808858  0.810023
+Phoneme                         0.324367  0.366034
+PickupGestureWiimoteZ           0.840000  0.780000
+PigAirwayPressure               0.774038  0.961538
+PigArtPressure                  0.985577  0.985577
+PigCVP                          0.966346  0.947115
+Plane                           1.000000  1.000000
+PowerCons                       0.972222  0.950000
+ProximalPhalanxOutlineAgeGroup  0.863415  0.834146
+ProximalPhalanxOutlineCorrect   0.907216  0.917526
+ProximalPhalanxTW               0.800000  0.800000
+RefrigerationDevices            0.493333  0.629333
+Rock                            0.920000  0.920000
+ScreenType                      0.501333  0.581333
+SemgHandGenderCh2               0.828333  0.855000
+SemgHandMovementCh2             0.466667  0.582222
+SemgHandSubjectCh2              0.766667  0.831111
+ShakeGestureWiimoteZ            0.920000  0.920000
+ShapeletSim                     0.983333  1.000000
+ShapesAll                       0.925000  0.946667
+SmallKitchenAppliances          0.810667  0.840000
+SmoothSubspace                  0.960000  0.846667
+SonyAIBORobotSurface1           0.920133  0.820300
+SonyAIBORobotSurface2           0.940189  0.931794
+StarLightCurves                 0.981423  0.981544
+Strawberry                      0.975676  0.972973
+SwedishLeaf                     0.976000  0.955200
+Symbols                         0.978894  0.978894
+SyntheticControl                0.963333  0.973333
+ToeSegmentation1                0.956140  0.973684
+ToeSegmentation2                0.892308  0.938462
+Trace                           1.000000  1.000000
+TwoLeadECG                      0.999122  0.995610
+TwoPatterns                     0.986000  0.997500
+UMD                             0.986111  0.965278
+UWaveGestureLibraryAll          0.973479  0.948074
+UWaveGestureLibraryX            0.857342  0.842267
+UWaveGestureLibraryY            0.798437  0.780011
+UWaveGestureLibraryZ            0.800949  0.797599
+Wafer                           1.000000  1.000000
+Wine                            0.888889  0.833333
+WordSynonyms                    0.744514  0.686520
+Worms                           0.740260  0.714286
+WormsTwoClass                   0.766234  0.779221
+Yoga                            0.932667  0.916000
+2026-02-28 21:40:08,954 [INFO] 
+Mean rank across datasets:
+model
+hydra    1.460938
+mrsqm    1.539062
+2026-02-28 21:40:08,962 [INFO] 
+=== WORST 12 DATASETS (candidates for deep-dive) ===
+2026-02-28 21:40:08,962 [INFO] 
+model                            hydra     mrsqm  mean_acc
+dataset                                                   
+Phoneme                       0.324367  0.366034  0.345200
+InlineSkate                   0.467273  0.436364  0.451818
+GestureMidAirD3               0.476923  0.476923  0.476923
+EOGVerticalSignal             0.483425  0.505525  0.494475
+SemgHandMovementCh2           0.466667  0.582222  0.524444
+ScreenType                    0.501333  0.581333  0.541333
+MiddlePhalanxTW               0.577922  0.512987  0.545455
+Haptics                       0.516234  0.594156  0.555195
+RefrigerationDevices          0.493333  0.629333  0.561333
+DodgerLoopDay                 0.571429  0.571429  0.571429
+MiddlePhalanxOutlineAgeGroup  0.571429  0.571429  0.571429
+EOGHorizontalSignal           0.577348  0.646409  0.611878
+2026-02-28 21:40:08,962 [INFO] 
+Results saved to results/summary.csv
