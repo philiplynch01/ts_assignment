@@ -1,35 +1,25 @@
 import csv
 import json
-import logging
+import os
 import time
 import traceback
-from dataclasses import asdict, dataclass, field
+import warnings
+from dataclasses import asdict
 from pathlib import Path
 
 import numpy as np
 import psutil
-import os
-from aeon.datasets import load_classification
 from aeon.datasets.tsc_datasets import univariate
-from sklearn.metrics import (accuracy_score, f1_score,
-                              classification_report)
-from sklearn.preprocessing import LabelEncoder
+from sklearn.metrics import (accuracy_score, f1_score)
 
+from experiments.utils import RunResult, load_dataset, dataset_meta, log
 from init_models import HydraModel, MrSQMModel
-
-import warnings
-import numpy as np
 
 warnings.filterwarnings("ignore", category=RuntimeWarning, module="sklearn")
 np.errstate(divide="ignore", over="ignore", invalid="ignore")
 
-# ---------------------------------------------------------------------------
-# Config
-# ---------------------------------------------------------------------------
-
 RESULTS_DIR = Path("results")
 PREDICTIONS_DIR = RESULTS_DIR / "predictions"
-LOG_FILE = RESULTS_DIR / "pipeline.log"
 SUMMARY_CSV = RESULTS_DIR / "summary.csv"
 
 SEEDS = [42]            # extend to e.g. [42, 0, 7] for multi-seed runs
@@ -41,103 +31,8 @@ MODELS = [
 # Set to a list of dataset names to restrict the run, e.g. ["Chinatown", "ECG200"]
 DATASET_SUBSET = None
 
-# ---------------------------------------------------------------------------
-# Logging
-# ---------------------------------------------------------------------------
-
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 PREDICTIONS_DIR.mkdir(parents=True, exist_ok=True)
-
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s",
-    handlers=[
-        logging.FileHandler(LOG_FILE),
-        logging.StreamHandler(),
-    ],
-)
-log = logging.getLogger(__name__)
-
-class MrSQMFilter(logging.Filter):
-    _noise = {
-        "Filter subsequences",
-        "Random sampling",
-        "Symbolic Parameters",
-        "Sampling window size",
-        "Found ",
-        "Fit training data",
-        "Search for subsequences",
-        "Transform time series",
-        "Select ",
-        "Compute ",
-    }
-    def filter(self, record):
-        return not any(record.getMessage().startswith(p) for p in self._noise)
-
-# Apply to root logger so it catches the pyx calls
-logging.getLogger().addFilter(MrSQMFilter())
-# ---------------------------------------------------------------------------
-# Result dataclass
-# ---------------------------------------------------------------------------
-
-@dataclass
-class RunResult:
-    dataset: str
-    model: str
-    seed: int
-    # Dataset metadata
-    n_train: int = 0
-    n_test: int = 0
-    series_length: int = 0
-    n_classes: int = 0
-    # Timing (seconds)
-    fit_time: float = 0.0
-    predict_time: float = 0.0
-    total_time: float = 0.0
-    # Memory (MB)
-    peak_memory_mb: float = 0.0
-    # Metrics
-    accuracy: float = 0.0
-    f1_macro: float = 0.0
-    f1_weighted: float = 0.0
-    # Status
-    status: str = "ok"          # ok | error
-    error_msg: str = ""
-
-# ---------------------------------------------------------------------------
-# Data helpers
-# ---------------------------------------------------------------------------
-
-def load_dataset(name: str):
-    """Load UCR dataset using canonical train/test splits."""
-    x_train, y_train = load_classification(name, split="train")
-    x_test, y_test = load_classification(name, split="test")
-
-    # aeon returns shape (N, n_channels, T) — squeeze to (N, T) for univariate
-    if x_train.ndim == 3 and x_train.shape[1] == 1:
-        x_train = x_train[:, 0, :]
-        x_test = x_test[:, 0, :]
-
-    # Encode string labels to integers
-    le = LabelEncoder()
-    le.fit(np.concatenate([y_train, y_test]))
-    y_train = le.transform(y_train)
-    y_test = le.transform(y_test)
-
-    return x_train, y_train, x_test, y_test, le
-
-
-def dataset_meta(x_train, x_test, y_train) -> dict:
-    return {
-        "n_train": len(x_train),
-        "n_test": len(x_test),
-        "series_length": x_train.shape[-1],
-        "n_classes": len(np.unique(y_train)),
-    }
-
-# ---------------------------------------------------------------------------
-# Single model run
-# ---------------------------------------------------------------------------
 
 def run_model(model_name: str,
               seed: int,
@@ -145,7 +40,7 @@ def run_model(model_name: str,
               y_train: np.ndarray,
               x_test: np.ndarray,
               y_test: np.ndarray,
-              input_dim: int) -> tuple[np.ndarray | None, float, float]:
+              input_dim: int) -> np.ndarray | None:
     """Instantiate and run a model. Returns (predictions, fit_time, predict_time)."""
 
     if model_name == "hydra":
@@ -156,21 +51,21 @@ def run_model(model_name: str,
         raise ValueError(f"Unknown model: {model_name}")
 
     # --- fit ---
-    t0 = time.perf_counter()
+    # t0 = time.perf_counter()
     if model_name == "hydra":
         # HydraModel.__call__ fits and predicts in one pass;
         # split timing by doing a dry transform-only pass isn't straightforward,
         # so we time the full call and attribute it to fit+predict together.
         predictions = model(x_train, y_train, x_test, y_test)
-        fit_time = time.perf_counter() - t0
-        predict_time = 0.0          # inseparable in current HydraModel design
+        # fit_time = time.perf_counter() - t0
+        # predict_time = 0.0          # inseparable in current HydraModel design
     else:
         # MrSQMModel fits transformer inside __call__ too, same approach
         predictions = model(x_train, y_train, x_test, y_test)
-        fit_time = time.perf_counter() - t0
-        predict_time = 0.0
+        # fit_time = time.perf_counter() - t0
+        # predict_time = 0.0
 
-    return predictions, fit_time, predict_time
+    return predictions
 
 # ---------------------------------------------------------------------------
 # Evaluate one dataset x model x seed
@@ -201,7 +96,7 @@ def evaluate(dataset: str, model_name: str, seed: int) -> RunResult:
 
     t_total_start = time.perf_counter()
     try:
-        predictions, fit_time, predict_time = run_model(
+        predictions = run_model(
             model_name, seed, x_train, y_train, x_test, y_test,
             input_dim=meta["series_length"]
         )
@@ -213,8 +108,8 @@ def evaluate(dataset: str, model_name: str, seed: int) -> RunResult:
         return result
 
     result.total_time = time.perf_counter() - t_total_start
-    result.fit_time = fit_time
-    result.predict_time = predict_time
+    # result.fit_time = fit_time
+    # result.predict_time = predict_time
     result.peak_memory_mb = process.memory_info().rss / 1e6 - mem_before
 
     result.accuracy = accuracy_score(y_test, predictions)
@@ -232,10 +127,6 @@ def evaluate(dataset: str, model_name: str, seed: int) -> RunResult:
     pred_path.write_text(json.dumps(predictions.tolist()))
 
     return result
-
-# ---------------------------------------------------------------------------
-# Pipeline
-# ---------------------------------------------------------------------------
 
 def run_pipeline(datasets: list[str], models: list[str], seeds: list[int]):
     all_results: list[RunResult] = []
@@ -263,10 +154,6 @@ def _append_csv(path: Path, result: RunResult):
         if write_header:
             writer.writeheader()
         writer.writerow(row)
-
-# ---------------------------------------------------------------------------
-# Summary & worst performers
-# ---------------------------------------------------------------------------
 
 def print_summary(results: list[RunResult]):
     import pandas as pd
@@ -298,10 +185,6 @@ def print_summary(results: list[RunResult]):
         for r in errors:
             log.warning(f"  {r.dataset} | {r.model} | seed={r.seed}: {r.error_msg[:120]}")
 
-
-# ---------------------------------------------------------------------------
-# Entry point
-# ---------------------------------------------------------------------------
 
 def main():
     datasets = DATASET_SUBSET if DATASET_SUBSET else list(univariate)
