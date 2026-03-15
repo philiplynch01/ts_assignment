@@ -26,6 +26,7 @@ class MrSQMModel:
             sfa_norm=sfa_norm,
             first_diff=first_diff
         )
+        self.classifier = None
 
     def __call__(self,
                  x_train: np.ndarray,
@@ -40,20 +41,20 @@ class MrSQMModel:
             raise e
 
         try:
-            classifier = LogisticRegression(
+            self.classifier = LogisticRegression(
                 solver='newton-cg',
                 class_weight='balanced',
                 random_state=0,
                 max_iter=1000
             )
-            classifier.fit(train_x, y_train)
+            self.classifier.fit(train_x, y_train)
         except Exception as e:
             print(f"Unexpected error during classification: {e}")
             raise e
 
         try:
             test_x = self.transformer.transform(x_test)
-            predictions = classifier.predict(test_x)
+            predictions = self.classifier.predict(test_x)
         except Exception as e:
             print(f"Unexpected error during prediction: {e}")
             raise e

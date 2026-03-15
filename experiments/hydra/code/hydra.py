@@ -4,12 +4,12 @@
 # https://arxiv.org/abs/2203.13652
 
 import numpy as np
-import torch, torch.nn as nn, torch.nn.functional as F
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
 
 class Hydra(nn.Module):
-
-    def __init__(self, input_length, k = 8, g = 64, seed = None):
-
+    def __init__(self, input_length, k=8, g=64, seed=None):
         super().__init__()
 
         if seed is not None:
@@ -23,25 +23,29 @@ class Hydra(nn.Module):
         self.dilations = 2 ** torch.arange(int(max_exponent) + 1)
         self.num_dilations = len(self.dilations)
 
-        self.paddings = torch.div((9 - 1) * self.dilations, 2, rounding_mode = "floor").int()
+        self.paddings = torch.div((9 - 1) * self.dilations, 2, rounding_mode="floor").int()
 
         self.divisor = min(2, self.g)
         self.h = self.g // self.divisor
 
-        self.W = torch.randn(self.num_dilations, self.divisor, self.k * self.h, 1, 9)
-        self.W = self.W - self.W.mean(-1, keepdims = True)
-        self.W = self.W / self.W.abs().sum(-1, keepdims = True)
+        # Create weights
+        W = torch.randn(self.num_dilations, self.divisor, self.k * self.h, 1, 9)
+        W = W - W.mean(-1, keepdims=True)
+        W = W / W.abs().sum(-1, keepdims=True)
+
+        # By registering this as a buffer, PyTorch automatically handles
+        # moving it when .to("mps") or .to("cpu") is called later.
+        self.register_buffer("W", W)
 
     # transform in batches of *batch_size*
-    def batch(self, X, batch_size = 256):
+    def batch(self, X, batch_size: int = 256, target_elements=None):
         num_examples = X.shape[0]
         if num_examples <= batch_size:
             return self(X)
         else:
             Z = []
-            batches = torch.arange(num_examples).split(batch_size)
-            for batch in batches:
-                Z.append(self(X[batch]))
+            for batch in X.split(batch_size, dim=0):
+                Z.append(self(batch))
             return torch.cat(Z)
 
     def forward(self, X):

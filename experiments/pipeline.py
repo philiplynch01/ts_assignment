@@ -9,9 +9,11 @@ from pathlib import Path
 
 import numpy as np
 import psutil
+import torch
 from aeon.datasets.tsc_datasets import univariate
 from sklearn.metrics import (accuracy_score, f1_score)
 
+from experiments.init_models import LRRawModel, RandomForestModel, DTWKNNModel
 from experiments.utils import RunResult, load_dataset, dataset_meta, log
 from init_models import HydraModel, MrSQMModel
 
@@ -19,14 +21,20 @@ warnings.filterwarnings("ignore", category=RuntimeWarning, module="sklearn")
 np.errstate(divide="ignore", over="ignore", invalid="ignore")
 
 RESULTS_DIR = Path("results")
-PREDICTIONS_DIR = RESULTS_DIR / "predictions"
-SUMMARY_CSV = RESULTS_DIR / "summary.csv"
+PREDICTIONS_DIR = RESULTS_DIR / "optimised_hydra_predictions"
+SUMMARY_CSV = RESULTS_DIR / "optimised_hydra_summary.csv"
 
 SEEDS = [42]            # extend to e.g. [42, 0, 7] for multi-seed runs
 MODELS = [
-    "hydra",
-    "mrsqm"
+    # "hydra",
+    "mps_hydra",
+    "cpu_optimised_hydra",
+    # "mrsqm"
+    # "lr_classifier",
+    # "rf_classifier",
+    # "dtw_1nn"
           ]
+
 
 # Set to a list of dataset names to restrict the run, e.g. ["Chinatown", "ECG200"]
 DATASET_SUBSET = None
@@ -42,34 +50,26 @@ def run_model(model_name: str,
               y_test: np.ndarray,
               input_dim: int) -> np.ndarray | None:
     """Instantiate and run a model. Returns (predictions, fit_time, predict_time)."""
-
+    # TODO: Make this dynamic rather than increasing the if/else statements
     if model_name == "hydra":
-        model = HydraModel(input_dim=input_dim, seed=seed)
+        model = HydraModel(input_dim=input_dim, seed=seed, use_latency_optimisation=False)
+    elif model_name == "mps_hydra":
+        model = HydraModel(input_dim=input_dim, seed=seed, device=torch.device("mps"))
+    elif model_name == "cpu_optimised_hydra":
+        model = HydraModel(input_dim=input_dim, seed=seed, device=torch.device("cpu"))
     elif model_name == "mrsqm":
         model = MrSQMModel(random_state=seed)
+    elif model_name == "lr_classifier":
+        model = LRRawModel()
+    elif model_name == "rf_classifier":
+        model = RandomForestModel()
+    elif model_name == "dtw_1nn":
+        model = DTWKNNModel()
     else:
         raise ValueError(f"Unknown model: {model_name}")
 
-    # --- fit ---
-    # t0 = time.perf_counter()
-    if model_name == "hydra":
-        # HydraModel.__call__ fits and predicts in one pass;
-        # split timing by doing a dry transform-only pass isn't straightforward,
-        # so we time the full call and attribute it to fit+predict together.
-        predictions = model(x_train, y_train, x_test, y_test)
-        # fit_time = time.perf_counter() - t0
-        # predict_time = 0.0          # inseparable in current HydraModel design
-    else:
-        # MrSQMModel fits transformer inside __call__ too, same approach
-        predictions = model(x_train, y_train, x_test, y_test)
-        # fit_time = time.perf_counter() - t0
-        # predict_time = 0.0
-
+    predictions = model(x_train, y_train, x_test, y_test)
     return predictions
-
-# ---------------------------------------------------------------------------
-# Evaluate one dataset x model x seed
-# ---------------------------------------------------------------------------
 
 def evaluate(dataset: str, model_name: str, seed: int) -> RunResult:
     result = RunResult(dataset=dataset, model=model_name, seed=seed)
@@ -108,8 +108,6 @@ def evaluate(dataset: str, model_name: str, seed: int) -> RunResult:
         return result
 
     result.total_time = time.perf_counter() - t_total_start
-    # result.fit_time = fit_time
-    # result.predict_time = predict_time
     result.peak_memory_mb = process.memory_info().rss / 1e6 - mem_before
 
     result.accuracy = accuracy_score(y_test, predictions)

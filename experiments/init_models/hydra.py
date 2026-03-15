@@ -1,10 +1,14 @@
-from functorch.dim import Tensor
+import numpy as np
+import torch
+from sklearn.linear_model import RidgeClassifierCV
 
 from experiments.hydra import Hydra, SparseScaler
-import numpy as np
-from sklearn.linear_model import RidgeClassifierCV
-import torch
-from experiments.utils.model_utils import get_torch_device
+from experiments.hydra.code.optimised_hydra import UpdatedHydra
+
+from torch._C._profiler import ProfilerActivity
+from torch.autograd.profiler import record_function
+from torch.profiler import profile
+
 
 def _to_numpy(t) -> np.ndarray:
     """Safely convert a torch Tensor or any array-like to a numpy array."""
@@ -15,12 +19,12 @@ def _to_numpy(t) -> np.ndarray:
 
 def _get_safe_device() -> torch.device:
     """
-    Return the best available device. MPS is excluded because Hydra's
-    convolution ops are not fully supported on MPS (weight/input type mismatch).
-    Falls back to CPU if CUDA is unavailable.
+    Falls back to CPU if CUDA or MPS is unavailable.
     """
     if torch.cuda.is_available():
         return torch.device("cuda")
+    if torch.backends.mps.is_available():
+        return torch.device("mps")
     return torch.device("cpu")
 
 
@@ -30,9 +34,19 @@ class HydraModel:
                  device: torch.device | None = None,
                  k: int = 8,
                  g: int = 64,
-                 seed: int = 42):
+                 seed: int = 42,
+                 use_latency_optimisation: bool = True,
+                 print_profile: bool = False):
         self.device = device or _get_safe_device()
-        self.transform = Hydra(input_dim, k=k, g=g, seed=seed).to(self.device)
+        self.print_profile = print_profile
+        self.use_latency_optimisation = use_latency_optimisation
+        self.classifier = None
+        print(f"[HydraModel] Using device: {self.device}")
+        if use_latency_optimisation or self.device.type == "mps":
+            print(f"[HydraModel] Using latency optimisation")
+            self.transform = UpdatedHydra(input_dim, k=k, g=g, seed=seed).to(self.device)
+        else:
+            self.transform = Hydra(input_dim, k=k, g=g, seed=seed).to(self.device)
         self.scaler = SparseScaler()
         torch.manual_seed(seed)
 
@@ -50,13 +64,21 @@ class HydraModel:
         x_test_t = self._to_tensor(x_test)
 
         try:
-            x_train_transformed = self.transform(x_train_t)
-            x_test_transformed = self.transform(x_test_t)
+            if self.print_profile:
+                x_train_transformed, x_test_transformed = self._print_profile(x_train_t, x_test_t)
+            else:
+                if self.use_latency_optimisation or self.device.type == "mps":
+                    x_train_transformed = self.transform.batch(x_train_t)
+                    x_test_transformed = self.transform.batch(x_test_t)
+                else:
+                    x_train_transformed = self.transform(x_train_t)
+                    x_test_transformed = self.transform(x_test_t)
+
         except Exception as e:
             print(f"[HydraModel] Transformation error: {e}")
             raise
-
         try:
+            print("[HydraModel] Fitting model")
             x_train_transformed = self.scaler.fit_transform(x_train_transformed)
             x_test_transformed = self.scaler.transform(x_test_transformed)
         except Exception as e:
@@ -69,34 +91,21 @@ class HydraModel:
         y_train_np = y_train.astype(np.int32)
 
         try:
-            classifier = RidgeClassifierCV(alphas=np.logspace(-3, 3, 10))
-            classifier.fit(x_train_np, y_train_np)
+            self.classifier = RidgeClassifierCV(alphas=np.logspace(-3, 3, 10))
+            self.classifier.fit(x_train_np, y_train_np)
         except Exception as e:
             print(f"[HydraModel] Classification error: {e}")
             raise
 
-        return classifier.predict(x_test_np)
+        return self.classifier.predict(x_test_np)
 
-
-class MrSQMModel:
-    def __init__(self,
-                 strat: str = 'RS',
-                 features_per_rep: int = 500,
-                 selection_per_rep: int = 2000,
-                 nsax: int = 0,
-                 nsfa: int = 5,
-                 random_state: int = 42,
-                 sfa_norm: bool = True,
-                 first_diff: bool = True):
-
-        self.random_state = random_state
-        self.transformer_kwargs = dict(
-            strat=strat,
-            features_per_rep=features_per_rep,
-            selection_per_rep=selection_per_rep,
-            nsax=nsax,
-            nsfa=nsfa,
-            random_state=random_state,
-            sfa_norm=sfa_norm,
-            first_diff=first_diff
-        )
+    def _print_profile(self, x_train_t, x_test_t):
+        with profile(activities=[ProfilerActivity.CPU], record_shapes=True) as prof:
+            with record_function("model_inference"):
+                if self.use_latency_optimisation or self.device.type == "mps":
+                    x_train_transformed = self.transform.batch(x_train_t)
+                    x_test_transformed = self.transform.batch(x_test_t)
+                else:
+                    x_train_transformed = self.transform(x_train_t)
+        print(prof.key_averages())
+        return x_train_transformed, x_test_transformed
