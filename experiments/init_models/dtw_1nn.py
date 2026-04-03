@@ -10,7 +10,8 @@ class DTWKNNModel:
         self.x_train = None
         self.y_train = None
 
-    def _dtw_distance(self, s1: np.ndarray, s2: np.ndarray) -> float:
+    @staticmethod
+    def _dtw_distance(s1: np.ndarray, s2: np.ndarray) -> float:
         return dtw.distance_fast(s1.astype(np.double), s2.astype(np.double))
 
     def __call__(self,

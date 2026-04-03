@@ -77,10 +77,22 @@ class UpdatedHydra(Hydra):
 
         # 1. Get the Ridge weights for the target class
         # If binary classification, Ridge might only have 1 row of weights.
-        if len(ridge_classifier.coef_.shape) == 1 or ridge_classifier.coef_.shape[0] == 1:
-            w_ridge = ridge_classifier.coef_[0]
+        coefs = ridge_classifier.coef_
+
+        # 1. Extract the full array of 6,144 weights safely
+        if len(coefs.shape) == 1:
+            w_ridge = coefs.copy()  # Shape was (n_features,)
+        elif coefs.shape[0] == 1:
+            w_ridge = coefs[0].copy()  # Shape was (1, n_features)
         else:
-            w_ridge = ridge_classifier.coef_[class_index]
+            w_ridge = coefs[class_index].copy()  # Shape was (n_classes, n_features)
+
+        # 2. Handle the Binary Directionality!
+        # If the model is binary, the weights always point towards Class 1.
+        # To explain Class 0, we must invert the weights so positive = evidence for Class 0.
+        is_binary = len(coefs.shape) == 1 or coefs.shape[0] == 1
+        if is_binary and class_index == 0:
+            w_ridge = -w_ridge
 
         # 2. Adjust weights by the scaler's standard deviation
         # (Avoid division by zero using the scaler's epsilon)

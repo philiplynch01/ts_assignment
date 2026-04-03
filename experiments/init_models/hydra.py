@@ -36,11 +36,13 @@ class HydraModel:
                  g: int = 64,
                  seed: int = 42,
                  use_latency_optimisation: bool = True,
-                 print_profile: bool = False):
+                 print_profile: bool = False,
+                 seq_length: int = 3_600):
         self.device = device or _get_safe_device()
         self.print_profile = print_profile
         self.use_latency_optimisation = use_latency_optimisation
         self.classifier = None
+        self.seq_length = seq_length
         print(f"[HydraModel] Using device: {self.device}")
         if use_latency_optimisation or self.device.type == "mps":
             print(f"[HydraModel] Using latency optimisation")
@@ -68,8 +70,8 @@ class HydraModel:
                 x_train_transformed, x_test_transformed = self._print_profile(x_train_t, x_test_t)
             else:
                 if self.use_latency_optimisation or self.device.type == "mps":
-                    x_train_transformed = self.transform.batch(x_train_t)
-                    x_test_transformed = self.transform.batch(x_test_t)
+                    x_train_transformed = self.transform.batch(x_train_t, target_elements=self.seq_length)
+                    x_test_transformed = self.transform.batch(x_test_t, target_elements=self.seq_length)
                 else:
                     x_train_transformed = self.transform(x_train_t)
                     x_test_transformed = self.transform(x_test_t)

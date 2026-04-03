@@ -42,10 +42,8 @@ class RunResult:
     # Status
     status: str = "ok"          # ok | error
     error_msg: str = ""
+    sequence_length: int = None
 
-# ---------------------------------------------------------------------------
-# Data helpers
-# ---------------------------------------------------------------------------
 
 def load_dataset(name: str):
     """Load UCR dataset using canonical train/test splits."""
