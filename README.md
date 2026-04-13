@@ -59,7 +59,30 @@ By dynamically adjusting batch sizes based on sequence lengths (targeting 4,000 
 *Figure 1: Log-scaled comparison of latency distributions across models, illustrating the extreme variance reduction achieved by dynamic batching.*
 
 ### Explainability (Saliency Mapping)
-To overcome HYDRA's "black-box" nature, we introduced a method mapping 1,024-dimensional feature coefficients back to original time steps, highlighting highly discriminative regions.
+To overcome HYDRA's "black-box" nature, we introduced a method that maps 1,024-dimensional feature coefficients back to the original time steps, highlighting highly discriminative regions. To quantitatively evaluate the quality of the saliency maps, we implemented a masking-based perturbation test.
 
-![Saliency Map Example](imgs/saliency_examples_combined.png)
+---
+
+## How to Run
+
+To test the updated model and reproduce the results:
+1. Complete the environment setup above.
+2. Open `./saliency_map - Coffee.ipynb` in your Jupyter environment.
+3. Run all cells sequentially to execute the saliency-based analysis and generate the corresponding explanation and evaluation results.
+
+---
+
+## Interpretability Improvements
+
+### Saliency Perturbation Analysis
+Evaluation using the masking-based perturbation framework revealed a consistent trend: masking highly salient regions identified by HYDRA resulted in the largest degradation in model performance.
+
+| **Model** | **Top > Random (%)** | **Top > Bottom (%)** |
+|----------|---------------------|----------------------|
+| **HYDRA** | **80.95** | **85.71** |
+| **LR** | 85.71 | 90.48 |
+| **MrSQM** | 76.19 | 85.71 |
+
+![Saliency Map Example](imgs/hydra_mr_sqm_saliency_comparison.png)
+
 *Figure 2: Qualitative comparison of HYDRA and MrSQM saliency maps. Highly salient (hot) regions denote areas most responsible for the model's classification decision.*
