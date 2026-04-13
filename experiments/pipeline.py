@@ -14,6 +14,8 @@ from aeon.datasets.tsc_datasets import univariate
 from sklearn.metrics import (accuracy_score, f1_score)
 
 from experiments.init_models import LRRawModel, RandomForestModel, DTWKNNModel
+from experiments.init_models.aeon_hydra import AeonHydraModel
+from experiments.init_models.optimised_aeon_hydra import BatchedOptimisedAeonHydraModel
 from experiments.utils import RunResult, load_dataset, dataset_meta, log
 from init_models import HydraModel, MrSQMModel
 
@@ -21,14 +23,15 @@ warnings.filterwarnings("ignore", category=RuntimeWarning, module="sklearn")
 np.errstate(divide="ignore", over="ignore", invalid="ignore")
 
 RESULTS_DIR = Path("results")
-PREDICTIONS_DIR = RESULTS_DIR / "optimised_hydra_predictions"
-SUMMARY_CSV = RESULTS_DIR / "optimised_hydra_summary.csv"
+PREDICTIONS_DIR = RESULTS_DIR / "og_aeon"
+SUMMARY_CSV = RESULTS_DIR / "og_aeon_summary.csv"
 
 SEEDS = [42]            # extend to e.g. [42, 0, 7] for multi-seed runs
 MODELS = [
     # "hydra",
-    "mps_hydra",
-    "cpu_optimised_hydra",
+    # "mps_hydra",
+    "aeon_hydra",
+    # "cpu_optimised_hydra",
     # "mrsqm"
     # "lr_classifier",
     # "rf_classifier",
@@ -37,6 +40,24 @@ MODELS = [
 
 
 # Set to a list of dataset names to restrict the run, e.g. ["Chinatown", "ECG200"]
+# Using a subset to evaluate the optimal sequence length for my hardware on cpu and mps
+#DATASET_SUBSET = ['SmoothSubspace',
+#  'MelbournePedestrian',
+#  'ItalyPowerDemand',
+#  'Chinatown',
+#  'Crop',
+#  'SyntheticControl',
+#  'SwedishLeaf',
+#  'InsectWingbeatSound',
+#  'FaceFour',
+#  'AllGestureWiimoteY',
+#  'UWaveGestureLibraryAll',
+#  'PigCVP',
+#  'PigArtPressure',
+#  'PigAirwayPressure',
+#  'HandOutlines',
+#  'Rock']
+
 DATASET_SUBSET = None
 
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -48,15 +69,21 @@ def run_model(model_name: str,
               y_train: np.ndarray,
               x_test: np.ndarray,
               y_test: np.ndarray,
-              input_dim: int) -> np.ndarray | None:
+              input_dim: int,
+              seq_length: int | None) -> np.ndarray | None:
     """Instantiate and run a model. Returns (predictions, fit_time, predict_time)."""
     # TODO: Make this dynamic rather than increasing the if/else statements
     if model_name == "hydra":
         model = HydraModel(input_dim=input_dim, seed=seed, use_latency_optimisation=False)
     elif model_name == "mps_hydra":
-        model = HydraModel(input_dim=input_dim, seed=seed, device=torch.device("mps"))
+        model = HydraModel(input_dim=input_dim, seed=seed, print_profile=True,
+                           device=torch.device("mps"), seq_length=4_000)
     elif model_name == "cpu_optimised_hydra":
-        model = HydraModel(input_dim=input_dim, seed=seed, device=torch.device("cpu"))
+        model = HydraModel(input_dim=input_dim, seed=seed, print_profile=False,
+                           device=torch.device("cpu"), seq_length=5_000)
+    elif model_name == "aeon_hydra":
+        model = AeonHydraModel()
+        # model = BatchedOptimisedAeonHydraModel()
     elif model_name == "mrsqm":
         model = MrSQMModel(random_state=seed)
     elif model_name == "lr_classifier":
@@ -71,8 +98,8 @@ def run_model(model_name: str,
     predictions = model(x_train, y_train, x_test, y_test)
     return predictions
 
-def evaluate(dataset: str, model_name: str, seed: int) -> RunResult:
-    result = RunResult(dataset=dataset, model=model_name, seed=seed)
+def evaluate(dataset: str, model_name: str, seed: int, seq_length: int | None = None) -> RunResult:
+    result = RunResult(dataset=dataset, model=model_name, seed=seed, sequence_length=seq_length)
 
     try:
         x_train, y_train, x_test, y_test, _ = load_dataset(dataset)
@@ -98,7 +125,7 @@ def evaluate(dataset: str, model_name: str, seed: int) -> RunResult:
     try:
         predictions = run_model(
             model_name, seed, x_train, y_train, x_test, y_test,
-            input_dim=meta["series_length"]
+            input_dim=meta["series_length"],seq_length=seq_length
         )
     except Exception as e:
         result.status = "error"
@@ -128,12 +155,15 @@ def evaluate(dataset: str, model_name: str, seed: int) -> RunResult:
 
 def run_pipeline(datasets: list[str], models: list[str], seeds: list[int]):
     all_results: list[RunResult] = []
-
+    # min_seq_len = 1_600
+    # max_seq_len = 6_401
+    # number_of_sequences = range(min_seq_len, max_seq_len, 200)
     total = len(datasets) * len(models) * len(seeds)
     done = 0
 
-    for dataset in datasets:
-        for model_name in models:
+    # for seq_length in number_of_sequences:
+    for model_name in models:
+        for dataset in datasets:
             for seed in seeds:
                 done += 1
                 log.info(f"--- [{done}/{total}] {dataset} | {model_name} | seed={seed} ---")

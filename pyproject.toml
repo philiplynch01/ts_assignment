@@ -5,7 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "aeon[classification]>=1.3.0",
+    "aeon[classification]>=1.3.0,<1.4.0",
     "dtaidistance>=2.4.0",
     "ipykernel>=7.2.0",
     "matplotlib>=3.10.8",

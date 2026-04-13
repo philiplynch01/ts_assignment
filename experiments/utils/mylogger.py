@@ -1,8 +1,10 @@
 import logging
 from pathlib import Path
 
+current_dir = Path(__file__).parent
+
 RESULTS_DIR = Path("results")
-LOG_FILE = RESULTS_DIR / "pipeline.log"
+LOG_FILE = current_dir / ".." / RESULTS_DIR / "pipeline.log"
 
 logging.basicConfig(
     level=logging.INFO,
